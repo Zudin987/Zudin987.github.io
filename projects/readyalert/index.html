@@ -3,12 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Download and set up BPSR Ready Alert, a lightweight Windows companion that plays sound alerts for BPSR Ready events.">
-  <meta name="theme-color" content="#0b1220">
-  <meta property="og:title" content="BPSR Ready Alert — Zudin987 Tools">
-  <meta property="og:description" content="Windows tray companion for matchmaking accept, party Ready Check and activity vote alerts in BPSR.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://zudin987.github.io/projects/readyalert/">
+  <meta name="description" content="Download and set up BPSR Ready Alert for Windows.">
+  <meta name="theme-color" content="#0d1117">
   <link rel="canonical" href="https://zudin987.github.io/projects/readyalert/">
   <title>BPSR Ready Alert — Zudin987 Tools</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -18,90 +14,64 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header"><div class="shell header-inner"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">Z</span><span class="brand-text">Zudin987 <strong>Tools</strong></span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="/#bpsr-tools">All BPSR tools</a><a href="/#help">Help</a><a class="nav-github" href="https://github.com/Zudin987/BPSR-ReadyAlert">GitHub</a></nav></div></header>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/">Zudin987 Tools</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <a href="/">Home</a>
+        <a href="https://github.com/Zudin987/BPSR-ReadyAlert">GitHub</a>
+      </nav>
+    </div>
+  </header>
 
   <main id="main">
-    <nav class="shell breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>BPSR Ready Alert</span></nav>
+    <nav class="shell breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><span>Ready Alert</span></nav>
 
     <section class="product-hero shell">
-      <div>
-        <div class="product-kicker"><div class="product-icon" aria-hidden="true">!</div><p class="eyebrow">BPSR tool · Windows</p></div>
-        <h1>BPSR Ready <span>Alert</span></h1>
-        <p class="product-lede">A small Windows tray companion that plays a sound when BPSR matchmaking reaches the accept/Ready popup, a party Ready Check starts, or a party/dungeon activity vote opens.</p>
-        <div class="product-badges"><span>Single EXE</span><span>System tray</span><span>Npcap capture</span></div>
-        <div class="product-actions"><a class="button primary" href="https://github.com/Zudin987/BPSR-ReadyAlert/releases/latest/download/BPSR-ReadyAlert.exe">Download latest EXE</a><a class="button secondary" href="https://github.com/Zudin987/BPSR-ReadyAlert#readme">Setup guide</a></div>
-        <p class="release-line">Latest GitHub release: <strong data-release-meta data-release-repo="Zudin987/BPSR-ReadyAlert" aria-live="polite">checking…</strong></p>
+      <p class="eyebrow">Windows · BPSR tool</p>
+      <h1>BPSR Ready Alert</h1>
+      <p class="product-lede">Play a sound when matchmaking, party Ready Check or activity voting appears.</p>
+      <div class="product-actions">
+        <a class="button" href="https://github.com/Zudin987/BPSR-ReadyAlert/releases/latest/download/BPSR-ReadyAlert.exe">Download latest EXE</a>
       </div>
-      <aside class="facts-card" aria-label="Ready Alert at a glance">
-        <h2>At a glance</h2>
-        <dl class="facts-list">
-          <div><dt>Platform</dt><dd>Windows x64</dd></div>
-          <div><dt>Install</dt><dd>Single EXE</dd></div>
-          <div><dt>Requires</dt><dd>Npcap</dd></div>
-          <div><dt>Runs as</dt><dd>Tray app</dd></div>
-          <div><dt>License</dt><dd>MIT</dd></div>
-        </dl>
-      </aside>
+      <p class="release-line">Latest release: <span data-release-meta data-release-repo="Zudin987/BPSR-ReadyAlert" aria-live="polite">checking…</span></p>
     </section>
 
     <section class="product-section">
-      <div class="shell content-grid">
-        <div class="main-column">
-          <article class="content-card">
-            <p class="eyebrow">Quick start</p>
-            <h2>Set it once, then leave it in the tray</h2>
-            <ol class="step-list">
-              <li><div><strong>Make sure Npcap is installed</strong><span>If Resonance Logs CN already uses Npcap, you normally do not need another installation.</span></div></li>
-              <li><div><strong>Open BPSR Ready Alert</strong><span>On first run, select <code>resonance-logs-cn.exe</code> if it is not found automatically.</span></div></li>
-              <li><div><strong>Choose the network adapter if needed</strong><span>By default it follows Resonance Logs CN's saved Npcap device or selects a likely active Ethernet/Wi-Fi adapter.</span></div></li>
-              <li><div><strong>Leave the app in the system tray</strong><span>Right-click the tray icon for Test Alert Sound, alert toggles, adapter choice, volume, logs or the Resonance Logs CN path.</span></div></li>
-            </ol>
-          </article>
+      <div class="shell">
+        <article class="content-card">
+          <h2>Quick start</h2>
+          <ol class="step-list">
+            <li>Make sure Npcap is installed.</li>
+            <li>Open BPSR Ready Alert.</li>
+            <li>Select Resonance Logs CN or the correct network adapter if automatic detection is wrong.</li>
+            <li>Leave the app running in the system tray.</li>
+          </ol>
+        </article>
 
-          <article class="content-card">
-            <p class="eyebrow">What it monitors</p>
-            <h2>Focused on BPSR Ready events</h2>
-            <ul class="feature-list">
-              <li>Matchmaking accept / Ready popup alerts.</li>
-              <li>Party Ready Check alerts.</li>
-              <li>Party or dungeon activity vote alerts.</li>
-              <li>Short duplicate suppression so one event does not repeatedly play the sound.</li>
-              <li>Per-alert toggles and app-local alert volume.</li>
-            </ul>
-            <div class="info-box"><strong>No game injection:</strong> Ready Alert uses Npcap packet capture. It does not inject into or modify the BPSR game process, and it does not replace Resonance Logs CN files.</div>
-          </article>
+        <article class="content-card">
+          <h2>Notes</h2>
+          <ul class="feature-list">
+            <li>Alerts can be enabled or disabled individually.</li>
+            <li>Alert volume is controlled inside the app.</li>
+            <li>Only one capture adapter is used at a time.</li>
+            <li>The app uses Npcap capture. It does not inject into or replace BPSR files.</li>
+          </ul>
+        </article>
 
-          <article class="content-card">
-            <p class="eyebrow">Network adapter behavior</p>
-            <h2>One capture adapter at a time</h2>
-            <p>Ready Alert prefers Resonance Logs CN's saved Npcap device when available. Otherwise it looks for an active physical Ethernet/Wi-Fi adapter and avoids common VPN, VM and tunnel adapters.</p>
-            <p>If the automatic choice is wrong, use <strong>Network Adapter</strong> from the tray menu and choose one manually. You can switch back to <strong>Follow Resonance Logs CN / Auto</strong> later.</p>
-          </article>
-        </div>
-
-        <aside class="side-column">
-          <section class="download-panel">
-            <p class="eyebrow">Download</p>
-            <h2>Ready Alert</h2>
-            <p>Self-contained Windows x64 EXE. Npcap remains an external dependency and is not bundled.</p>
-            <a class="button primary" href="https://github.com/Zudin987/BPSR-ReadyAlert/releases/latest/download/BPSR-ReadyAlert.exe">Download latest EXE</a>
-            <a class="text-link" href="https://github.com/Zudin987/BPSR-ReadyAlert/releases/latest">View release notes & checksum →</a>
-          </section>
-          <section class="content-card">
-            <p class="eyebrow">Project links</p>
-            <div class="links-list">
-              <a href="https://github.com/Zudin987/BPSR-ReadyAlert#readme"><span>Full setup guide</span><span aria-hidden="true">→</span></a>
-              <a href="https://github.com/Zudin987/BPSR-ReadyAlert/releases/latest"><span>Latest release</span><span aria-hidden="true">→</span></a>
-              <a href="https://github.com/Zudin987/BPSR-ReadyAlert"><span>Source repository</span><span aria-hidden="true">→</span></a>
-            </div>
-          </section>
-        </aside>
+        <article class="download-panel">
+          <h2>Project links</h2>
+          <div class="links-list">
+            <a href="https://github.com/Zudin987/BPSR-ReadyAlert#readme"><span>Full setup guide</span><span>→</span></a>
+            <a href="https://github.com/Zudin987/BPSR-ReadyAlert/releases/latest"><span>Release notes and checksum</span><span>→</span></a>
+            <a href="https://github.com/Zudin987/BPSR-ReadyAlert"><span>Source repository</span><span>→</span></a>
+          </div>
+        </article>
       </div>
     </section>
-
-    <section class="section shell"><div class="product-footer-cta"><div><h2>Want BPSR music playback too?</h2><p>BPSR MIDI Lite is another portable Windows utility from the same hub.</p></div><a class="button secondary" href="/projects/bpsr-midi/">Open BPSR MIDI</a></div></section>
   </main>
 
-  <footer class="site-footer"><div class="shell footer-inner"><div class="footer-brand"><span class="brand-mark small" aria-hidden="true">Z</span><span>© <span id="year">2026</span> Zudin987</span></div><p>BPSR Ready Alert is an unofficial community utility and is not affiliated with BPSR's developers or publishers.</p></div></footer>
+  <footer class="site-footer"><div class="shell footer-inner"><span>© <span id="year">2026</span> Zudin987</span><span>Unofficial BPSR community tool.</span></div></footer>
 </body>
 </html>
