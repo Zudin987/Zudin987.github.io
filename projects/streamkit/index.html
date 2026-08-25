@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Download and set up the BPSR Portable Stream Kit for OBS, Discord screen share, VTuber avatars, Twitch and optional TikTok streaming.">
+  <meta name="theme-color" content="#0b1220">
+  <meta property="og:title" content="BPSR Portable Stream Kit — Zudin987 Tools">
+  <meta property="og:description" content="Portable Windows streaming bundle for game capture, VTuber avatars, Discord, Twitch and optional TikTok output.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zudin987.github.io/projects/streamkit/">
+  <link rel="canonical" href="https://zudin987.github.io/projects/streamkit/">
+  <title>BPSR Portable Stream Kit — Zudin987 Tools</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header"><div class="shell header-inner"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">Z</span><span class="brand-text">Zudin987 <strong>Tools</strong></span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="/#bpsr-tools">All BPSR tools</a><a href="/#help">Help</a><a class="nav-github" href="https://github.com/Zudin987/BPSR-Portable-Stream-Kit">GitHub</a></nav></div></header>
+
+  <main id="main">
+    <nav class="shell breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>Portable Stream Kit</span></nav>
+
+    <section class="product-hero shell">
+      <div>
+        <div class="product-kicker"><div class="product-icon" aria-hidden="true">◉</div><p class="eyebrow">Streaming tool · Windows</p></div>
+        <h1>Portable <span>Stream Kit</span></h1>
+        <p class="product-lede">A portable Windows launcher that prepares OBS for game capture, VTuber avatars, Discord screen share, Twitch and optional TikTok output.</p>
+        <div class="product-badges"><span>Portable ZIP</span><span>OBS bundle</span><span>VTuber options</span></div>
+        <div class="product-actions"><a class="button primary" href="https://github.com/Zudin987/BPSR-Portable-Stream-Kit/releases/latest/download/StreamKit-win-x64.zip">Download latest ZIP</a><a class="button secondary" href="https://github.com/Zudin987/BPSR-Portable-Stream-Kit#readme">Setup guide</a></div>
+        <p class="release-line">Latest GitHub release: <strong data-release-meta data-release-repo="Zudin987/BPSR-Portable-Stream-Kit" aria-live="polite">checking…</strong></p>
+      </div>
+      <aside class="facts-card" aria-label="Stream Kit at a glance">
+        <h2>At a glance</h2>
+        <dl class="facts-list">
+          <div><dt>Platform</dt><dd>Windows x64</dd></div>
+          <div><dt>Install</dt><dd>Extract ZIP</dd></div>
+          <div><dt>Discord</dt><dd>Program Projector</dd></div>
+          <div><dt>Public</dt><dd>Twitch + optional TikTok</dd></div>
+          <div><dt>Avatar</dt><dd>Live2D / PNG / none</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="product-section">
+      <div class="shell content-grid">
+        <div class="main-column">
+          <article class="content-card">
+            <p class="eyebrow">Quick start</p>
+            <h2>From ZIP to stream layout</h2>
+            <ol class="step-list">
+              <li><div><strong>Extract the complete release ZIP</strong><span>Keep the bundle together so the launcher can find its portable OBS, plugins, templates and assets.</span></div></li>
+              <li><div><strong>Run <code>BPSRStreamKit.exe</code></strong><span>Open your game first, then choose the game, avatar mode, frame and destination.</span></div></li>
+              <li><div><strong>Press the main start button</strong><span>StreamKit prepares the matching OBS scene/output path for Discord-only or public streaming.</span></div></li>
+              <li><div><strong>Use Quick Launch next time</strong><span>After a successful start, your selected game, avatar, frame and destination are remembered.</span></div></li>
+            </ol>
+          </article>
+
+          <article class="content-card">
+            <p class="eyebrow">Destinations</p>
+            <h2>Use one setup for different stream paths</h2>
+            <h3>Discord only</h3>
+            <p>Share the clean OBS Program Projector window with sound. OBS Mic/Aux stays muted so your normal Discord microphone remains your voice path and is not doubled.</p>
+            <h3>Discord + Twitch</h3>
+            <p>Discord still receives the clean projector view while Twitch receives the normal 1920×1080 public stream output.</p>
+            <h3>Optional TikTok</h3>
+            <p>When your TikTok account has LIVE/stream-key access, StreamKit can prepare a vertical Aitum output. The tool cannot grant TikTok LIVE or stream-key access.</p>
+          </article>
+
+          <article class="content-card">
+            <p class="eyebrow">Avatar & audio privacy</p>
+            <h2>Choose how much streaming stack you want</h2>
+            <ul class="feature-list">
+              <li>Full VTuber mode uses VTube Studio + Spout2.</li>
+              <li>Simple Talking Avatar uses the bundled PNG avatar workflow.</li>
+              <li>No Avatar captures only the selected game and frame.</li>
+              <li>The selected game is captured with its own audio instead of a general desktop loopback.</li>
+              <li>Public-stream microphone audio receives OBS RNNoise suppression.</li>
+            </ul>
+            <div class="info-box"><strong>Credentials stay local:</strong> Twitch/TikTok credentials, OAuth data, Aitum outputs and the generated OBS WebSocket password remain in the extracted StreamKit folder and are excluded from source control.</div>
+          </article>
+
+          <article class="content-card">
+            <p class="eyebrow">Bundle maintenance</p>
+            <h2>Treat portable OBS + plugins as one tested package</h2>
+            <p>The portable bundle uses pinned versions of OBS Studio and the plugins StreamKit expects. Update through a newer tested StreamKit release rather than letting the portable OBS copy independently drift away from the tested combination.</p>
+          </article>
+        </div>
+
+        <aside class="side-column">
+          <section class="download-panel">
+            <p class="eyebrow">Download</p>
+            <h2>Stream Kit</h2>
+            <p>Windows x64 portable ZIP. Extract the whole archive before launching it.</p>
+            <a class="button primary" href="https://github.com/Zudin987/BPSR-Portable-Stream-Kit/releases/latest/download/StreamKit-win-x64.zip">Download latest ZIP</a>
+            <a class="text-link" href="https://github.com/Zudin987/BPSR-Portable-Stream-Kit/releases/latest">View release notes →</a>
+          </section>
+          <section class="content-card">
+            <p class="eyebrow">Project links</p>
+            <div class="links-list">
+              <a href="https://github.com/Zudin987/BPSR-Portable-Stream-Kit#readme"><span>Full setup guide</span><span aria-hidden="true">→</span></a>
+              <a href="https://github.com/Zudin987/BPSR-Portable-Stream-Kit/blob/main/CHANGELOG.md"><span>Changelog</span><span aria-hidden="true">→</span></a>
+              <a href="https://github.com/Zudin987/BPSR-Portable-Stream-Kit/releases/latest"><span>Latest release</span><span aria-hidden="true">→</span></a>
+              <a href="https://github.com/Zudin987/BPSR-Portable-Stream-Kit"><span>Source repository</span><span aria-hidden="true">→</span></a>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section shell"><div class="product-footer-cta"><div><h2>Need a lighter BPSR utility?</h2><p>MIDI Lite and Ready Alert are single-purpose tools with much smaller setup scope.</p></div><a class="button secondary" href="/#bpsr-tools">See all BPSR tools</a></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-inner"><div class="footer-brand"><span class="brand-mark small" aria-hidden="true">Z</span><span>© <span id="year">2026</span> Zudin987</span></div><p>OBS Studio, VTube Studio, Spout2, Aitum, Discord, Twitch, TikTok and game names belong to their respective owners.</p></div></footer>
+</body>
+</html>
