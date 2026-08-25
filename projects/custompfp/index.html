@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Read the safety notes, download and set up BPSR CustomPFP Lite for custom Blue Protocol: Star Resonance portraits and cards.">
+  <meta name="theme-color" content="#0b1220">
+  <meta property="og:title" content="BPSR CustomPFP Lite — Zudin987 Tools">
+  <meta property="og:description" content="Beginner-guided custom BPSR portrait/card workflow with backup and restore safeguards.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zudin987.github.io/projects/custompfp/">
+  <link rel="canonical" href="https://zudin987.github.io/projects/custompfp/">
+  <title>BPSR CustomPFP Lite — Zudin987 Tools</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header"><div class="shell header-inner"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true">Z</span><span class="brand-text">Zudin987 <strong>Tools</strong></span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="/#bpsr-tools">All BPSR tools</a><a href="/#help">Help</a><a class="nav-github" href="https://github.com/Zudin987/BPSR-CustomPFP-Lite">GitHub</a></nav></div></header>
+
+  <main id="main">
+    <nav class="shell breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>BPSR CustomPFP Lite</span></nav>
+
+    <section class="product-hero shell">
+      <div>
+        <div class="product-kicker"><div class="product-icon" aria-hidden="true">◎</div><p class="eyebrow">BPSR tool · Windows · Unofficial method</p></div>
+        <h1>BPSR CustomPFP <span>Lite</span></h1>
+        <p class="product-lede">A beginner-first Windows app that turns the community custom portrait/card method into a numbered workflow with backup, validation and restore safeguards.</p>
+        <div class="warning-box"><strong>Read this first:</strong> the method temporarily modifies a BPSR client file. It is unofficial, not supported by the game, and is <strong>not guaranteed ban-safe</strong>. Game updates or policy changes may also break the method.</div>
+        <div class="product-actions"><a class="button primary" href="#download">Read setup & download</a><a class="button secondary" href="https://github.com/Zudin987/BPSR-CustomPFP-Lite#readme">Full guide</a></div>
+        <p class="release-line">Latest GitHub release: <strong data-release-meta data-release-repo="Zudin987/BPSR-CustomPFP-Lite" aria-live="polite">checking…</strong></p>
+      </div>
+      <aside class="facts-card" aria-label="CustomPFP Lite at a glance">
+        <h2>At a glance</h2>
+        <dl class="facts-list">
+          <div><dt>Platform</dt><dd>Windows</dd></div>
+          <div><dt>Use</dt><dd>Portrait + card</dd></div>
+          <div><dt>Method</dt><dd>Client-file modification</dd></div>
+          <div><dt>Backups</dt><dd>Automatic safeguards</dd></div>
+          <div><dt>Source</dt><dd>Public repository</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="product-section">
+      <div class="shell content-grid">
+        <div class="main-column">
+          <article class="content-card">
+            <p class="eyebrow">Beginner workflow</p>
+            <h2>The app keeps the risky parts visible</h2>
+            <ol class="step-list">
+              <li><div><strong>Find your BPSR installation</strong><span>Use automatic detection or choose the <code>StreamingAssets\container</code> folder manually.</span></div></li>
+              <li><div><strong>Choose and crop your image</strong><span>Select square profile picture or tall card, then move/zoom the crop until it looks right.</span></div></li>
+              <li><div><strong>Prepare Guild Photo Booth</strong><span>Open BPSR, enter Guild Photo Booth and use Windowed mode. The app shows the exact confirmations it needs.</span></div></li>
+              <li><div><strong>Apply the temporary picture</strong><span>The app validates the package and creates an install-specific clean backup before replacing the live file.</span></div></li>
+              <li><div><strong>Take and save the photo in BPSR</strong><span>Use the square/card resize helpers and save the portrait/card before restoring.</span></div></li>
+              <li><div><strong>Restore the original BPSR file</strong><span>The app refuses unsafe restores when the live file no longer matches a modification it knows it installed.</span></div></li>
+            </ol>
+          </article>
+
+          <article class="content-card">
+            <p class="eyebrow">Safety behavior</p>
+            <h2>Designed to fail closed</h2>
+            <ul class="feature-list">
+              <li>Backups are separated for different BPSR installations/regions.</li>
+              <li>Interrupted Apply operations can be detected and recovered.</li>
+              <li>Unity bundle compression is preserved when supported.</li>
+              <li>The live package is validated before replacement.</li>
+              <li>The app refuses to force an old backup over an unknown or updated live file.</li>
+            </ul>
+            <div class="warning-box"><strong>If BPSR updates while the custom file is active:</strong> do not force an old backup over the update. Close the game, use the launcher/Steam Verify or Repair function, then reopen the app.</div>
+          </article>
+
+          <article class="content-card">
+            <p class="eyebrow">Privacy</p>
+            <h2>Your selected image stays local</h2>
+            <p>Selected images, crops, hashes and backups remain on your PC. The app does not ask for your BPSR login credentials.</p>
+            <p>This repository currently has no project-wide LICENSE file, so public source availability should not be confused with a blanket license for the project's original source/assets.</p>
+          </article>
+        </div>
+
+        <aside class="side-column">
+          <section id="download" class="download-panel">
+            <p class="eyebrow">Download</p>
+            <h2>Windows package</h2>
+            <p>The release ZIP contains the app plus the project documentation. Read the warning above before using the Apply function.</p>
+            <a class="button primary" href="https://github.com/Zudin987/BPSR-CustomPFP-Lite/releases/latest/download/BPSR-CustomPFP-Lite-Windows.zip">Download latest ZIP</a>
+            <a class="text-link" href="https://github.com/Zudin987/BPSR-CustomPFP-Lite/releases/latest">View release notes & checksums →</a>
+          </section>
+          <section class="content-card">
+            <p class="eyebrow">Project links</p>
+            <div class="links-list">
+              <a href="https://github.com/Zudin987/BPSR-CustomPFP-Lite#readme"><span>Full six-step guide</span><span aria-hidden="true">→</span></a>
+              <a href="https://github.com/Zudin987/BPSR-CustomPFP-Lite/blob/main/CHANGELOG.md"><span>Changelog</span><span aria-hidden="true">→</span></a>
+              <a href="https://github.com/Zudin987/BPSR-CustomPFP-Lite/releases/latest"><span>Latest release</span><span aria-hidden="true">→</span></a>
+              <a href="https://github.com/Zudin987/BPSR-CustomPFP-Lite"><span>Source repository</span><span aria-hidden="true">→</span></a>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section shell"><div class="product-footer-cta"><div><h2>Prefer a tool that does not modify game files?</h2><p>BPSR MIDI and Ready Alert are designed without client-file replacement.</p></div><a class="button secondary" href="/#bpsr-tools">See all BPSR tools</a></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-inner"><div class="footer-brand"><span class="brand-mark small" aria-hidden="true">Z</span><span>© <span id="year">2026</span> Zudin987</span></div><p>CustomPFP Lite is unofficial and is not affiliated with or endorsed by BPSR's developers or publishers.</p></div></footer>
+</body>
+</html>
