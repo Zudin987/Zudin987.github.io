@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Beginner-friendly gaming, MIDI and streaming tools by Zudin987.">
+  <meta name="theme-color" content="#0b1020">
+  <meta property="og:title" content="Zudin987 Tools">
+  <meta property="og:description" content="Small, practical tools for gaming, MIDI and streaming — with clear setup steps.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zudin987.github.io/">
+  <title>Zudin987 Tools</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to projects</a>
+
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="#top" aria-label="Zudin987 Tools home">
+        <span class="brand-mark" aria-hidden="true">Z</span>
+        <span>Zudin987 <strong>Tools</strong></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
+        <a href="#projects">Projects</a>
+        <a href="#download-help">How to download</a>
+        <a href="#about">About</a>
+        <a class="nav-github" href="https://github.com/Zudin987">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="top" class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow">Gaming · MIDI · Streaming</p>
+        <h1>Small tools.<br><span>Clear setup.</span><br>Less friction.</h1>
+        <p class="hero-text">Practical community utilities built for people who want to download something, follow a few simple steps, and get on with what they were doing.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">Browse projects</a>
+          <a class="button secondary" href="https://github.com/Zudin987">View GitHub profile</a>
+        </div>
+        <div class="trust-row" aria-label="Site highlights">
+          <span>Beginner-first</span>
+          <span>Windows + Android</span>
+          <span>Direct GitHub links</span>
+        </div>
+      </div>
+
+      <div class="hero-panel" aria-label="Quick chooser">
+        <p class="panel-kicker">Not sure where to start?</p>
+        <h2>Pick what you want to do</h2>
+        <div class="chooser-list">
+          <a href="#midi"><span class="chooser-icon">♪</span><span><strong>Play music in BPSR</strong><small>BPSR MIDI Lite / Studio</small></span><span aria-hidden="true">→</span></a>
+          <a href="#meter"><span class="chooser-icon">↗</span><span><strong>See combat numbers</strong><small>BlueMeter Lite</small></span><span aria-hidden="true">→</span></a>
+          <a href="#pfp"><span class="chooser-icon">◎</span><span><strong>Make a custom profile picture</strong><small>CustomPFP Lite</small></span><span aria-hidden="true">→</span></a>
+          <a href="#alert"><span class="chooser-icon">!</span><span><strong>Hear when Ready pops</strong><small>BPSR Ready Alert</small></span><span aria-hidden="true">→</span></a>
+          <a href="#stream"><span class="chooser-icon">◉</span><span><strong>Start streaming</strong><small>Portable Stream Kit</small></span><span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section shell">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Featured projects</p>
+          <h2>BPSR toolkit</h2>
+        </div>
+        <p>Each project card tells you what it is, what device it needs, and where to get the official release from this GitHub account.</p>
+      </div>
+
+      <div class="project-grid">
+        <article id="midi" class="project-card featured">
+          <div class="card-top">
+            <div class="project-icon music" aria-hidden="true">♪</div>
+            <div class="badges"><span>Windows</span><span>Featured</span></div>
+          </div>
+          <h3>BPSR MIDI Lite / Studio</h3>
+          <p class="project-summary">Play local MIDI files or Online Sequencer songs through BPSR instruments. Studio also adds compatible YouTube/audio-to-MIDI conversion.</p>
+          <ul class="mini-list">
+            <li>Keyboard/Piano, Electric Guitar and Electric Bass</li>
+            <li>Automatic note fitting and Song Check</li>
+            <li>F10 emergency stop</li>
+          </ul>
+          <div class="card-actions">
+            <a class="button primary small" href="https://github.com/Zudin987/BPSR-MIDI-Lite/releases">Download</a>
+            <a class="text-link" href="https://github.com/Zudin987/BPSR-MIDI-Lite#readme">Beginner guide →</a>
+          </div>
+        </article>
+
+        <article id="meter" class="project-card featured">
+          <div class="card-top">
+            <div class="project-icon meter" aria-hidden="true">↗</div>
+            <div class="badges"><span>Android</span><span>Overlay</span></div>
+          </div>
+          <h3>BlueMeter Lite</h3>
+          <p class="project-summary">A lightweight Android combat meter that shows DPS, healing and damage received directly over BPSR — no PC required.</p>
+          <ul class="mini-list">
+            <li>Compact and expanded overlay views</li>
+            <li>7-day local encounter history</li>
+            <li>Processes supported combat traffic locally</li>
+          </ul>
+          <div class="card-actions">
+            <a class="button primary small" href="https://github.com/Zudin987/BPSR-BlueMeter-Lite/releases">Download APK</a>
+            <a class="text-link" href="https://github.com/Zudin987/BPSR-BlueMeter-Lite#readme">Setup guide →</a>
+          </div>
+        </article>
+
+        <article id="pfp" class="project-card caution">
+          <div class="card-top">
+            <div class="project-icon pfp" aria-hidden="true">◎</div>
+            <div class="badges"><span>Windows</span><span>Advanced</span></div>
+          </div>
+          <h3>BPSR CustomPFP Lite</h3>
+          <p class="project-summary">Turns the community custom portrait/card method into a guided, numbered Windows app designed for people with zero IT knowledge.</p>
+          <div class="notice warning"><strong>Read before using:</strong> this temporarily modifies a BPSR client file. The method is unofficial and is not guaranteed ban-safe.</div>
+          <div class="card-actions">
+            <a class="button primary small" href="https://github.com/Zudin987/BPSR-CustomPFP-Lite/releases">Download</a>
+            <a class="text-link" href="https://github.com/Zudin987/BPSR-CustomPFP-Lite#readme">Read full guide first →</a>
+          </div>
+        </article>
+
+        <article id="alert" class="project-card">
+          <div class="card-top">
+            <div class="project-icon alert" aria-hidden="true">!</div>
+            <div class="badges"><span>Windows</span><span>Tray app</span></div>
+          </div>
+          <h3>BPSR Ready Alert</h3>
+          <p class="project-summary">Plays a sound when matchmaking reaches the accept/Ready popup, a party Ready Check starts, or an activity vote opens.</p>
+          <ul class="mini-list">
+            <li>Works beside Resonance Logs CN</li>
+            <li>Uses Npcap capture</li>
+            <li>Individual alert toggles and volume</li>
+          </ul>
+          <div class="card-actions">
+            <a class="button primary small" href="https://github.com/Zudin987/BPSR-ReadyAlert/releases">Download EXE</a>
+            <a class="text-link" href="https://github.com/Zudin987/BPSR-ReadyAlert#readme">Setup guide →</a>
+          </div>
+        </article>
+
+        <article id="stream" class="project-card wide">
+          <div class="card-top">
+            <div class="project-icon stream" aria-hidden="true">◉</div>
+            <div class="badges"><span>Windows</span><span>Portable</span></div>
+          </div>
+          <div class="wide-content">
+            <div>
+              <h3>BPSR Portable Stream Kit</h3>
+              <p class="project-summary">A portable launcher that prepares OBS for game capture, VTuber avatars, Discord screen share, Twitch and optional TikTok output.</p>
+            </div>
+            <ul class="mini-list compact">
+              <li>Quick Launch for returning users</li>
+              <li>Full VTuber, talking PNG or no avatar</li>
+              <li>Discord-only or public-stream workflows</li>
+            </ul>
+          </div>
+          <div class="card-actions">
+            <a class="button primary small" href="https://github.com/Zudin987/BPSR-Portable-Stream-Kit/releases">Download ZIP</a>
+            <a class="text-link" href="https://github.com/Zudin987/BPSR-Portable-Stream-Kit#readme">Streaming guide →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell other-projects">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Other utilities</p>
+          <h2>Small tools & experiments</h2>
+        </div>
+      </div>
+      <div class="small-project-grid">
+        <a class="small-project" href="https://github.com/Zudin987/MIDI-Cutter-Lite">
+          <span class="small-icon">✂</span><span><strong>MIDI Cutter Lite</strong><small>Simple Windows MIDI trimmer</small></span><span>→</span>
+        </a>
+        <a class="small-project" href="https://github.com/Zudin987/PalDPSOverlay">
+          <span class="small-icon">P</span><span><strong>PalDPSOverlay</strong><small>Palworld DPS overlay project</small></span><span>→</span>
+        </a>
+        <a class="small-project" href="https://github.com/Zudin987/myIPTV">
+          <span class="small-icon">TV</span><span><strong>myIPTV</strong><small>Malaysian IPTV playlist repo</small></span><span>→</span>
+        </a>
+        <a class="small-project" href="https://github.com/Zudin987/builder-for-morphe">
+          <span class="small-icon">M</span><span><strong>builder-for-morphe</strong><small>Personal Morphe builder fork</small></span><span>→</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="download-help" class="section shell help-section">
+      <div class="section-heading narrow">
+        <div>
+          <p class="eyebrow">Never used GitHub Releases?</p>
+          <h2>Downloading is only three steps</h2>
+        </div>
+      </div>
+      <ol class="steps">
+        <li><span class="step-number">1</span><div><strong>Choose the project above</strong><p>Press its blue Download button. You will be taken to that project's GitHub Releases page.</p></div></li>
+        <li><span class="step-number">2</span><div><strong>Open the newest release</strong><p>Look at the top release and find the <b>Assets</b> section. You do not need the Source code ZIP unless the guide specifically says so.</p></div></li>
+        <li><span class="step-number">3</span><div><strong>Download the app file</strong><p>Windows tools normally use an <code>.exe</code> or release <code>.zip</code>. BlueMeter Lite uses an Android <code>.apk</code>. Then follow that project's linked setup guide.</p></div></li>
+      </ol>
+      <div class="notice info"><strong>Safety tip:</strong> use the links on this page or the matching <b>Zudin987</b> GitHub repository. Avoid random re-upload sites when an official project Release is available.</div>
+    </section>
+
+    <section id="about" class="section shell about-section">
+      <div class="about-card">
+        <div>
+          <p class="eyebrow">About this site</p>
+          <h2>Made to reduce setup pain.</h2>
+        </div>
+        <div class="about-copy">
+          <p>I build and maintain small utilities around games, MIDI and streaming. The priority is straightforward UI, low-friction setup, and documentation that does not assume the reader already knows GitHub, command lines, or developer terminology.</p>
+          <p>This is a static GitHub Pages site: no account, analytics tracker, advertising script or database is required to browse it.</p>
+          <a class="text-link strong" href="https://github.com/Zudin987">See every public repository on GitHub →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div><span class="brand-mark small" aria-hidden="true">Z</span><span>© <span id="year">2026</span> Zudin987</span></div>
+      <p>Community projects are unofficial unless a repository explicitly says otherwise. Game and service names belong to their respective owners.</p>
+    </div>
+  </footer>
+</body>
+</html>
