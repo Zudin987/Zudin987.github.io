@@ -13,8 +13,8 @@
   --warning: #ffc27d;
   --warning-bg: rgba(58, 33, 26, 0.82);
 
-  --desktop-bg: url("/assets/background-desktop.png");
-  --mobile-bg: url("/assets/background-mobile.png");
+  --desktop-bg: url("/assets/art/background-desktop.png");
+  --mobile-bg: url("/assets/art/background-mobile.png");
 }
 
 html {
