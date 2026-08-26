@@ -27,6 +27,22 @@ if (toggle && nav) {
 const year = document.querySelector('#year');
 if (year) year.textContent = String(new Date().getFullYear());
 
+const wallpaperParts = [
+  '/assets/art/wallpaper.avif.part01.txt',
+  '/assets/art/wallpaper.avif.part02.txt',
+  '/assets/art/wallpaper.avif.part03.txt'
+];
+
+Promise.all(
+  wallpaperParts.map(path => fetch(path).then(response => response.ok ? response.text() : Promise.reject()))
+)
+  .then(parts => {
+    const encoded = parts.map(part => part.trim()).join('');
+    if (!encoded.startsWith('AAAA')) throw new Error('Invalid wallpaper data');
+    document.documentElement.style.setProperty('--wallpaper-image', `url("data:image/avif;base64,${encoded}")`);
+  })
+  .catch(() => {});
+
 const releaseNodes = [...document.querySelectorAll('[data-release-repo]')];
 const repos = [...new Set(releaseNodes.map(node => node.dataset.releaseRepo).filter(Boolean))];
 
