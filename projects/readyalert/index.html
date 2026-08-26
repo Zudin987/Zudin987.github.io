@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="BPSR Ready Alert for Windows: Ready/queue alerts plus a customizable floating BPSR chat overlay with filters and keyword sounds.">
+  <meta name="description" content="BPSR Ready Alert for Windows: Ready/queue alerts and an optional view-only BPSR chat overlay.">
   <meta name="theme-color" content="#080b1f">
   <meta property="og:title" content="BPSR Ready Alert — Zudin987 / MrEz Tools">
-  <meta property="og:description" content="Ready/queue alerts plus a lightweight customizable BPSR chat overlay for Windows.">
+  <meta property="og:description" content="Ready/queue alerts and an optional BPSR chat overlay for Windows.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://zudin987.github.io/projects/readyalert/">
   <link rel="canonical" href="https://zudin987.github.io/projects/readyalert/">
@@ -19,113 +19,62 @@
 </head>
 <body class="theme-ready">
   <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header">
-    <div class="shell header-inner">
-      <a class="brand" href="/">Zudin987 / MrEz Tools</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-        <a href="/">Home</a>
-        <a href="https://github.com/Zudin987/BPSR-ReadyAlert">GitHub</a>
-      </nav>
-    </div>
-  </header>
+  <header class="site-header"><div class="shell header-inner">
+    <a class="brand" href="/">Zudin987 / MrEz Tools</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="/">Home</a><a href="https://github.com/Zudin987/BPSR-ReadyAlert">GitHub</a></nav>
+  </div></header>
 
   <main id="main">
     <nav class="shell breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><span>Ready Alert</span></nav>
 
     <section class="product-hero shell">
-      <p class="eyebrow">Windows · BPSR companion · Portable</p>
+      <p class="eyebrow">Windows · BPSR · Portable</p>
       <h1>BPSR Ready Alert</h1>
-      <p class="product-lede">Get fast Ready/queue alerts and, if you want it, a lightweight floating BPSR chat overlay with custom tabs, filters and keyword sounds.</p>
-      <div class="product-actions">
-        <a class="button" href="https://github.com/Zudin987/BPSR-ReadyAlert/releases/latest/download/BPSR-ReadyAlert.exe">Download latest EXE</a>
-      </div>
+      <p class="product-lede">Ready/queue alerts with an optional view-only floating BPSR chat overlay.</p>
+      <div class="product-actions"><a class="button" href="https://github.com/Zudin987/BPSR-ReadyAlert/releases/latest/download/BPSR-ReadyAlert.exe">Download latest EXE</a></div>
       <p class="release-line">Latest release: <span data-release-meta data-release-repo="Zudin987/BPSR-ReadyAlert" aria-live="polite">checking…</span></p>
     </section>
 
-    <section class="product-section">
-      <div class="shell">
-        <article class="content-card">
-          <h2>What it does</h2>
-          <ul class="feature-list">
-            <li>Sound alert for matchmaking accept / Ready popup.</li>
-            <li>Party Ready Check and activity-confirm alerts.</li>
-            <li>Optional desktop notifications and app-local alert volume.</li>
-            <li>Optional floating Chat Overlay with World, Guild/Team, All and custom tabs.</li>
-            <li>Case-insensitive Show/Hide filters with easy OR / AND syntax and advanced regex support.</li>
-            <li>Up to three prioritized message-only keyword/regex sound rules with one shared chat-alert volume.</li>
-          </ul>
-        </article>
+    <section class="product-section"><div class="shell">
+      <article class="content-card">
+        <h2>Use</h2>
+        <ol class="step-list">
+          <li>Make sure Npcap is installed.</li>
+          <li>Open BPSR Ready Alert.</li>
+          <li>Select Resonance Logs CN or the correct network adapter if auto-detection misses it.</li>
+          <li>Leave it running in the system tray.</li>
+          <li>Enable Chat Overlay only if you want the chat window.</li>
+        </ol>
+      </article>
 
-        <article class="content-card">
-          <h2>Chat Overlay highlights</h2>
-          <ul class="feature-list">
-            <li>Custom channels, minimum level filters, timestamps and compact mode.</li>
-            <li>Smart Scroll with a new-message indicator while reading older chat.</li>
-            <li>Always on Top, click-through hotkey and screen-edge collapse/expand.</li>
-            <li>Configurable font, channel colors, zebra rows, separators and opacity.</li>
-            <li>Private/Talk highlighting and optional sound.</li>
-            <li>Local blocked-user list, persistent settings, backup recovery and capture diagnostics.</li>
-          </ul>
-        </article>
+      <article class="content-card">
+        <h2>What it does</h2>
+        <ul class="feature-list">
+          <li>Matchmaking / Ready Check sound alerts and optional desktop notifications.</li>
+          <li>Optional chat overlay with tabs, filters, keyword sounds, opacity, click-through and Always on Top.</li>
+          <li>Simple filters such as <code>serum | food | raid</code> and <code>boss AND hard</code>.</li>
+          <li>Alerts + chat share one Npcap capture.</li>
+        </ul>
+      </article>
 
-        <article class="content-card">
-          <h2>Filter examples</h2>
-          <ul class="feature-list">
-            <li><code>serum | food | raid</code> = match any of them.</li>
-            <li>One pattern per line is also OR.</li>
-            <li><code>boss AND hard</code> requires both.</li>
-            <li><code>(raid|dungeon)</code> works as normal regex.</li>
-            <li>Matching is case-insensitive, and short terms such as <code>PA</code> are allowed.</li>
-            <li>Invalid or pathological regex is guarded so it cannot crash or hang the overlay.</li>
-          </ul>
-        </article>
+      <article class="content-card">
+        <h2>Notes</h2>
+        <p>Npcap is required and is not bundled. ReadyAlert can run beside Resonance Logs CN and can auto-launch it.</p>
+        <p>It does not inject into BPSR, replace game files, send chat, or automate gameplay.</p>
+      </article>
 
-        <article class="content-card">
-          <h2>Quick start</h2>
-          <ol class="step-list">
-            <li>Make sure Npcap is installed.</li>
-            <li>Download and open BPSR Ready Alert.</li>
-            <li>Select Resonance Logs CN or the correct network adapter if automatic detection is wrong.</li>
-            <li>Leave ReadyAlert running in the system tray.</li>
-            <li>Enable Chat Overlay from the tray only if you want the chat feature.</li>
-          </ol>
-        </article>
-
-        <article class="content-card">
-          <h2>Lightweight by design</h2>
-          <ul class="feature-list">
-            <li>Ready alerts and chat share the same Npcap capture and packet-processing pipeline.</li>
-            <li>The chat feature does not start a second independent packet capture.</li>
-            <li>When Chat Overlay is off, chat protobuf/UI processing is skipped.</li>
-            <li>Chat history stays in memory only.</li>
-            <li>The release is one self-contained Windows x64 EXE; no .NET installation is required.</li>
-          </ul>
-        </article>
-
-        <article class="content-card">
-          <h2>Safety and compatibility</h2>
-          <ul class="feature-list">
-            <li>Npcap is required and is not bundled.</li>
-            <li>ReadyAlert can run beside Resonance Logs CN and can auto-launch it.</li>
-            <li>It does not inject into BPSR or replace game / Resonance Logs CN files.</li>
-            <li>The Chat Overlay is view-only: it cannot send chat or automate gameplay.</li>
-          </ul>
-        </article>
-
-        <article class="download-panel">
-          <h2>Project links</h2>
-          <div class="links-list">
-            <a href="https://github.com/Zudin987/BPSR-ReadyAlert#readme"><span>Full setup and filter guide</span><span>→</span></a>
-            <a href="https://github.com/Zudin987/BPSR-ReadyAlert/releases/latest"><span>Release notes and checksum</span><span>→</span></a>
-            <a href="https://github.com/Zudin987/BPSR-ReadyAlert"><span>Source repository</span><span>→</span></a>
-          </div>
-        </article>
-      </div>
-    </section>
+      <article class="download-panel">
+        <h2>Links</h2>
+        <div class="links-list">
+          <a href="https://github.com/Zudin987/BPSR-ReadyAlert#readme"><span>GitHub README</span><span>→</span></a>
+          <a href="https://github.com/Zudin987/BPSR-ReadyAlert/releases/latest"><span>Latest release</span><span>→</span></a>
+          <a href="https://github.com/Zudin987/BPSR-ReadyAlert"><span>Source</span><span>→</span></a>
+        </div>
+      </article>
+    </div></section>
   </main>
 
-  <div class="character-strip" aria-hidden="true"><span class="c1"></span><span class="c2"></span><span class="c3"></span><span class="c4"></span><span class="c5"></span><span class="c6"></span><span class="c7"></span><span class="c8"></span></div>
   <footer class="site-footer"><div class="shell footer-inner"><span>© <span id="year">2026</span> Zudin987 / MrEz</span><span>Unofficial BPSR community tool.</span></div></footer>
 </body>
 </html>
