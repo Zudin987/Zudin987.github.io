@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Download and set up BlueMeter Lite for Android.">
+  <meta name="description" content="Download BlueMeter Lite for Android.">
   <meta name="theme-color" content="#080b1f">
   <link rel="canonical" href="https://zudin987.github.io/projects/bluemeter/">
   <title>BlueMeter Lite — Zudin987 / MrEz Tools</title>
@@ -15,75 +15,62 @@
 </head>
 <body class="theme-bluemeter">
   <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header">
-    <div class="shell header-inner">
-      <a class="brand" href="/">Zudin987 / MrEz Tools</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
-        <a href="/">Home</a>
-        <a href="https://github.com/Zudin987/BPSR-BlueMeter-Lite">GitHub</a>
-      </nav>
-    </div>
-  </header>
+  <header class="site-header"><div class="shell header-inner">
+    <a class="brand" href="/">Zudin987 / MrEz Tools</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="/">Home</a><a href="https://github.com/Zudin987/BPSR-BlueMeter-Lite">GitHub</a></nav>
+  </div></header>
 
   <main id="main">
     <nav class="shell breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><span>BlueMeter Lite</span></nav>
 
     <section class="product-hero shell">
-      <p class="eyebrow">Android · BPSR tool</p>
+      <p class="eyebrow">Android · BPSR</p>
       <h1>BlueMeter Lite</h1>
-      <p class="product-lede">Show DPS, healing and damage received over BPSR directly on Android. No PC is required.</p>
+      <p class="product-lede">DPS, healing and damage-received overlay for BPSR directly on Android.</p>
       <div class="product-actions"><a class="button" href="#download">Choose APK</a></div>
       <p class="release-line">Latest release: <span data-release-meta data-release-repo="Zudin987/BPSR-BlueMeter-Lite" aria-live="polite">checking…</span></p>
     </section>
 
-    <section class="product-section">
-      <div class="shell">
-        <article class="content-card">
-          <h2>Quick start</h2>
-          <ol class="step-list">
-            <li>Install the correct APK. Most recent Android phones use arm64-v8a.</li>
-            <li>Open BlueMeter Lite and tap Start DPS Meter.</li>
-            <li>Allow Display over other apps and approve Android's VPN prompt.</li>
-            <li>Open BPSR. The meter appears over the game.</li>
-          </ol>
-        </article>
+    <section class="product-section"><div class="shell">
+      <article class="content-card">
+        <h2>Use</h2>
+        <ol class="step-list">
+          <li>Install the correct APK. Most recent phones use arm64-v8a.</li>
+          <li>Open BlueMeter Lite → Start DPS Meter.</li>
+          <li>Allow Display over other apps and approve Android's VPN prompt.</li>
+          <li>Open BPSR and fight.</li>
+        </ol>
+        <p>The VPN prompt is for local packet capture. It is not a remote VPN service.</p>
+      </article>
 
-        <article id="download" class="download-panel">
-          <h2>Choose APK</h2>
-          <p>Use arm64-v8a unless you know your device needs another architecture.</p>
-          <div class="asset-choice">
-            <a data-release-repo="Zudin987/BPSR-BlueMeter-Lite" data-release-asset="arm64-v8a.apk" href="https://github.com/Zudin987/BPSR-BlueMeter-Lite/releases/latest"><span>arm64-v8a <small>Recommended for most recent phones</small></span><span>↓</span></a>
-            <a data-release-repo="Zudin987/BPSR-BlueMeter-Lite" data-release-asset="armeabi-v7a.apk" href="https://github.com/Zudin987/BPSR-BlueMeter-Lite/releases/latest"><span>armeabi-v7a <small>Older 32-bit ARM devices</small></span><span>↓</span></a>
-            <a data-release-repo="Zudin987/BPSR-BlueMeter-Lite" data-release-asset="x86_64.apk" href="https://github.com/Zudin987/BPSR-BlueMeter-Lite/releases/latest"><span>x86_64 <small>Mostly emulators or uncommon x86 devices</small></span><span>↓</span></a>
-          </div>
-        </article>
+      <article id="download" class="download-panel">
+        <h2>Choose APK</h2>
+        <div class="asset-choice">
+          <a data-release-repo="Zudin987/BPSR-BlueMeter-Lite" data-release-asset="arm64-v8a.apk" href="https://github.com/Zudin987/BPSR-BlueMeter-Lite/releases/latest"><span>arm64-v8a <small>Most recent phones</small></span><span>↓</span></a>
+          <a data-release-repo="Zudin987/BPSR-BlueMeter-Lite" data-release-asset="armeabi-v7a.apk" href="https://github.com/Zudin987/BPSR-BlueMeter-Lite/releases/latest"><span>armeabi-v7a <small>Older 32-bit ARM</small></span><span>↓</span></a>
+          <a data-release-repo="Zudin987/BPSR-BlueMeter-Lite" data-release-asset="x86_64.apk" href="https://github.com/Zudin987/BPSR-BlueMeter-Lite/releases/latest"><span>x86_64 <small>Mostly emulators</small></span><span>↓</span></a>
+        </div>
+      </article>
 
-        <article class="content-card">
-          <h2>Notes</h2>
-          <ul class="feature-list">
-            <li>The Android VPN prompt is used for local packet capture. It is not a remote VPN service.</li>
-            <li>Combat data and encounter history are processed locally on the device.</li>
-            <li>The overlay can show damage, healing and damage received.</li>
-            <li>Game or protocol updates can require a BlueMeter update.</li>
-          </ul>
-          <div class="screenshot-frame"><img src="https://raw.githubusercontent.com/Zudin987/BPSR-BlueMeter-Lite/main/docs/screenshots/bluemeter-lite-expanded.png" loading="lazy" decoding="async" alt="BlueMeter Lite expanded combat overlay"></div>
-        </article>
+      <article class="content-card">
+        <h2>Notes</h2>
+        <p>Combat data and encounter history stay on your device. Game or protocol updates may require a BlueMeter update.</p>
+        <div class="screenshot-frame"><img src="https://raw.githubusercontent.com/Zudin987/BPSR-BlueMeter-Lite/main/docs/screenshots/bluemeter-lite-expanded.png" loading="lazy" decoding="async" alt="BlueMeter Lite expanded combat overlay"></div>
+      </article>
 
-        <article class="download-panel">
-          <h2>Project links</h2>
-          <div class="links-list">
-            <a href="https://github.com/Zudin987/BPSR-BlueMeter-Lite#readme"><span>Setup and controls</span><span>→</span></a>
-            <a href="https://github.com/Zudin987/BPSR-BlueMeter-Lite/blob/main/PRIVACY.md"><span>Privacy details</span><span>→</span></a>
-            <a href="https://github.com/Zudin987/BPSR-BlueMeter-Lite/releases/latest"><span>Latest release</span><span>→</span></a>
-            <a href="https://github.com/Zudin987/BPSR-BlueMeter-Lite"><span>Source repository</span><span>→</span></a>
-          </div>
-        </article>
-      </div>
-    </section>
+      <article class="download-panel">
+        <h2>Links</h2>
+        <div class="links-list">
+          <a href="https://github.com/Zudin987/BPSR-BlueMeter-Lite#readme"><span>GitHub README</span><span>→</span></a>
+          <a href="https://github.com/Zudin987/BPSR-BlueMeter-Lite/blob/main/PRIVACY.md"><span>Privacy</span><span>→</span></a>
+          <a href="https://github.com/Zudin987/BPSR-BlueMeter-Lite/releases/latest"><span>Latest release</span><span>→</span></a>
+          <a href="https://github.com/Zudin987/BPSR-BlueMeter-Lite"><span>Source</span><span>→</span></a>
+        </div>
+      </article>
+    </div></section>
   </main>
 
-  <div class="character-strip" aria-hidden="true"><span class="c1"></span><span class="c2"></span><span class="c3"></span><span class="c4"></span><span class="c5"></span><span class="c6"></span><span class="c7"></span><span class="c8"></span></div>
   <footer class="site-footer"><div class="shell footer-inner"><span>© <span id="year">2026</span> Zudin987 / MrEz</span><span>Unofficial BPSR community tool.</span></div></footer>
 </body>
 </html>
