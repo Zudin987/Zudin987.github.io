@@ -1,0 +1,1 @@
+Generated blended cosmic/anime wallpaper used by the website theme. Stored as three base64 AVIF chunks so the static site can load it without changing project/download behavior.
