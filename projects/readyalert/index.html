@@ -3,8 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Download and set up BPSR Ready Alert for Windows.">
+  <meta name="description" content="BPSR Ready Alert for Windows: Ready/queue alerts plus a customizable floating BPSR chat overlay with filters and keyword sounds.">
   <meta name="theme-color" content="#0d1117">
+  <meta property="og:title" content="BPSR Ready Alert — Zudin987 / MrEz Tools">
+  <meta property="og:description" content="Ready/queue alerts plus a lightweight customizable BPSR chat overlay for Windows.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zudin987.github.io/projects/readyalert/">
   <link rel="canonical" href="https://zudin987.github.io/projects/readyalert/">
   <title>BPSR Ready Alert — Zudin987 / MrEz Tools</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -29,9 +33,9 @@
     <nav class="shell breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><span>Ready Alert</span></nav>
 
     <section class="product-hero shell">
-      <p class="eyebrow">Windows · BPSR tool</p>
+      <p class="eyebrow">Windows · BPSR companion · Portable</p>
       <h1>BPSR Ready Alert</h1>
-      <p class="product-lede">Play a sound when matchmaking, party Ready Check or activity voting appears.</p>
+      <p class="product-lede">Get fast Ready/queue alerts and, if you want it, a lightweight floating BPSR chat overlay with custom tabs, filters and keyword sounds.</p>
       <div class="product-actions">
         <a class="button" href="https://github.com/Zudin987/BPSR-ReadyAlert/releases/latest/download/BPSR-ReadyAlert.exe">Download latest EXE</a>
       </div>
@@ -41,29 +45,77 @@
     <section class="product-section">
       <div class="shell">
         <article class="content-card">
+          <h2>What it does</h2>
+          <ul class="feature-list">
+            <li>Sound alert for matchmaking accept / Ready popup.</li>
+            <li>Party Ready Check and activity-confirm alerts.</li>
+            <li>Optional desktop notifications and app-local alert volume.</li>
+            <li>Optional floating Chat Overlay with World, Guild/Team, All and custom tabs.</li>
+            <li>Case-insensitive Show/Hide filters with easy OR / AND syntax and advanced regex support.</li>
+            <li>Up to three prioritized message-only keyword/regex sound rules with one shared chat-alert volume.</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Chat Overlay highlights</h2>
+          <ul class="feature-list">
+            <li>Custom channels, minimum level filters, timestamps and compact mode.</li>
+            <li>Smart Scroll with a new-message indicator while reading older chat.</li>
+            <li>Always on Top, click-through hotkey and screen-edge collapse/expand.</li>
+            <li>Configurable font, channel colors, zebra rows, separators and opacity.</li>
+            <li>Private/Talk highlighting and optional sound.</li>
+            <li>Local blocked-user list, persistent settings, backup recovery and capture diagnostics.</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Filter examples</h2>
+          <ul class="feature-list">
+            <li><code>serum | food | raid</code> = match any of them.</li>
+            <li>One pattern per line is also OR.</li>
+            <li><code>boss AND hard</code> requires both.</li>
+            <li><code>(raid|dungeon)</code> works as normal regex.</li>
+            <li>Matching is case-insensitive, and short terms such as <code>PA</code> are allowed.</li>
+            <li>Invalid or pathological regex is guarded so it cannot crash or hang the overlay.</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
           <h2>Quick start</h2>
           <ol class="step-list">
             <li>Make sure Npcap is installed.</li>
-            <li>Open BPSR Ready Alert.</li>
+            <li>Download and open BPSR Ready Alert.</li>
             <li>Select Resonance Logs CN or the correct network adapter if automatic detection is wrong.</li>
-            <li>Leave the app running in the system tray.</li>
+            <li>Leave ReadyAlert running in the system tray.</li>
+            <li>Enable Chat Overlay from the tray only if you want the chat feature.</li>
           </ol>
         </article>
 
         <article class="content-card">
-          <h2>Notes</h2>
+          <h2>Lightweight by design</h2>
           <ul class="feature-list">
-            <li>Alerts can be enabled or disabled individually.</li>
-            <li>Alert volume is controlled inside the app.</li>
-            <li>Only one capture adapter is used at a time.</li>
-            <li>The app uses Npcap capture. It does not inject into or replace BPSR files.</li>
+            <li>Ready alerts and chat share the same Npcap capture and packet-processing pipeline.</li>
+            <li>The chat feature does not start a second independent packet capture.</li>
+            <li>When Chat Overlay is off, chat protobuf/UI processing is skipped.</li>
+            <li>Chat history stays in memory only.</li>
+            <li>The release is one self-contained Windows x64 EXE; no .NET installation is required.</li>
+          </ul>
+        </article>
+
+        <article class="content-card">
+          <h2>Safety and compatibility</h2>
+          <ul class="feature-list">
+            <li>Npcap is required and is not bundled.</li>
+            <li>ReadyAlert can run beside Resonance Logs CN and can auto-launch it.</li>
+            <li>It does not inject into BPSR or replace game / Resonance Logs CN files.</li>
+            <li>The Chat Overlay is view-only: it cannot send chat or automate gameplay.</li>
           </ul>
         </article>
 
         <article class="download-panel">
           <h2>Project links</h2>
           <div class="links-list">
-            <a href="https://github.com/Zudin987/BPSR-ReadyAlert#readme"><span>Full setup guide</span><span>→</span></a>
+            <a href="https://github.com/Zudin987/BPSR-ReadyAlert#readme"><span>Full setup and filter guide</span><span>→</span></a>
             <a href="https://github.com/Zudin987/BPSR-ReadyAlert/releases/latest"><span>Release notes and checksum</span><span>→</span></a>
             <a href="https://github.com/Zudin987/BPSR-ReadyAlert"><span>Source repository</span><span>→</span></a>
           </div>
