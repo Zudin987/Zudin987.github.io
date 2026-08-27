@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="BPSR Ready Alert for Windows: Ready/queue alerts and an optional view-only BPSR chat overlay.">
+  <meta name="description" content="BPSR Ready Alert for Windows: Ready/queue alerts plus an optional chat overlay with filters, English translation and Guild/Party TTS.">
   <meta name="theme-color" content="#080b1f">
   <meta property="og:title" content="BPSR Ready Alert — Zudin987 / MrEz Tools">
-  <meta property="og:description" content="Ready/queue alerts and an optional BPSR chat overlay for Windows.">
+  <meta property="og:description" content="Ready/queue alerts plus an optional BPSR chat overlay with translation and Guild/Party TTS.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://zudin987.github.io/projects/readyalert/">
   <link rel="canonical" href="https://zudin987.github.io/projects/readyalert/">
@@ -31,7 +31,7 @@
     <section class="product-hero shell">
       <p class="eyebrow">Windows · BPSR · Portable</p>
       <h1>BPSR Ready Alert</h1>
-      <p class="product-lede">Ready/queue alerts with an optional view-only floating BPSR chat overlay.</p>
+      <p class="product-lede">Ready/queue alerts plus an optional view-only BPSR chat overlay with filters, English translation and Guild/Party TTS.</p>
       <div class="product-actions"><a class="button" href="https://github.com/Zudin987/BPSR-ReadyAlert/releases/latest/download/BPSR-ReadyAlert.exe">Download latest EXE</a></div>
       <p class="release-line">Latest release: <span data-release-meta data-release-repo="Zudin987/BPSR-ReadyAlert" aria-live="polite">checking…</span></p>
     </section>
@@ -44,7 +44,7 @@
           <li>Open BPSR Ready Alert.</li>
           <li>Select Resonance Logs CN or the correct network adapter if auto-detection misses it.</li>
           <li>Leave it running in the system tray.</li>
-          <li>Enable Chat Overlay only if you want the chat window.</li>
+          <li>Enable Chat Overlay only if you want the chat window, translation or TTS.</li>
         </ol>
       </article>
 
@@ -52,16 +52,41 @@
         <h2>What it does</h2>
         <ul class="feature-list">
           <li>Matchmaking / Ready Check sound alerts and optional desktop notifications.</li>
-          <li>Optional chat overlay with tabs, filters, keyword sounds, opacity, click-through and Always on Top.</li>
-          <li>Simple filters such as <code>serum | food | raid</code> and <code>boss AND hard</code>.</li>
-          <li>Alerts + chat share one Npcap capture.</li>
+          <li>Optional chat overlay with World, Guild/Team, All and custom tabs.</li>
+          <li>Filters, keyword sounds, opacity, click-through, Always on Top and smoother follow-latest scrolling.</li>
+          <li>Optional English translation for World, Guild and Party / Team chat.</li>
+          <li>Optional English TTS for Guild and Party / Team only. World chat is never spoken.</li>
+          <li>Alerts + chat share one Npcap capture pipeline.</li>
+        </ul>
+      </article>
+
+      <article class="content-card">
+        <h2>Audio controls</h2>
+        <p>ReadyAlert keeps its three audio volumes separate so one feature cannot accidentally change another:</p>
+        <ul class="feature-list">
+          <li><strong>Ready / Queue volume</strong> — matchmaking and Ready Check alerts.</li>
+          <li><strong>Chat alert volume</strong> — keyword and Private/Talk sounds.</li>
+          <li><strong>TTS volume</strong> — spoken Guild / Party chat only.</li>
+        </ul>
+        <p>The TTS toolbar also shows its state clearly: green = active, red = off, amber = enabled but muted or no speech channel is selected.</p>
+      </article>
+
+      <article class="content-card">
+        <h2>v1.2.1 reliability changes</h2>
+        <ul class="feature-list">
+          <li>Settings clearly show Saved, Unsaved, or Applied — not saved states.</li>
+          <li>Blocked players are suppressed from overlay rows, chat sounds, translation and not-yet-playing TTS.</li>
+          <li>Npcap adapter switching preflights the new adapter and rolls back if the switch fails.</li>
+          <li>Large chat bursts use bounded UI work so the overlay stays responsive.</li>
+          <li>Clipboard and diagnostics interactions are hardened against common Windows UI errors.</li>
         </ul>
       </article>
 
       <article class="content-card">
         <h2>Notes</h2>
         <p>Npcap is required and is not bundled. ReadyAlert can run beside Resonance Logs CN and can auto-launch it.</p>
-        <p>It does not inject into BPSR, replace game files, send chat, or automate gameplay.</p>
+        <p>ReadyAlert does not inject into BPSR, replace game files, send chat, or automate gameplay.</p>
+        <p>Translation/TTS use no-key Google Translate/gTTS-style web endpoints. They can be rate-limited or changed upstream; failures do not stop normal Ready/Queue alerts or local chat capture.</p>
       </article>
 
       <article class="download-panel">
