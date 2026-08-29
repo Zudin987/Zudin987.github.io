@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Use a PC BPSR DPS meter while playing BPSR on Android.">
+  <meta name="theme-color" content="#080b1f">
+  <link rel="canonical" href="https://zudin987.github.io/projects/android-relay/">
+  <title>BPSR Android DPSMeter Relay — Zudin987 / MrEz Tools</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/theme.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="/script.js" defer></script>
+</head>
+<body class="theme-android-relay">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header"><div class="shell header-inner">
+    <a class="brand" href="/">Zudin987 / MrEz Tools</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="/">Home</a><a href="https://github.com/Zudin987/BPSR-Android-DPSMeter-Relay">GitHub</a></nav>
+  </div></header>
+
+  <main id="main">
+    <nav class="shell breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><span>Android DPSMeter Relay</span></nav>
+
+    <section class="product-hero shell">
+      <p class="eyebrow">Windows + Android · BPSR</p>
+      <h1>BPSR Android DPSMeter Relay</h1>
+      <p class="product-lede">Play BPSR on Android while a compatible DPS meter captures the relayed traffic on your PC.</p>
+      <div class="product-actions"><a class="button" href="https://github.com/Zudin987/BPSR-Android-DPSMeter-Relay/releases/latest">Latest release</a></div>
+      <p class="release-line">Latest release: <span data-release-meta data-release-repo="Zudin987/BPSR-Android-DPSMeter-Relay" aria-live="polite">checking…</span></p>
+    </section>
+
+    <section class="product-section"><div class="shell">
+      <article class="content-card">
+        <h2>First setup</h2>
+        <ol class="step-list">
+          <li>Download and extract the latest ZIP, then run BPSR Relay Manager.</li>
+          <li>Select the PC network address connected to the same router as your phone.</li>
+          <li>Prepare Relay → Allow Firewall → Start Phone Setup.</li>
+          <li>Scan/import the QR profile in Android SFA and route BPSR only.</li>
+          <li>Start Relay on PC, start SFA on the phone, then open BPSR.</li>
+          <li>Set your compatible DPS meter capture/process target to <strong>StarSEA</strong>.</li>
+        </ol>
+      </article>
+
+      <article class="content-card">
+        <h2>Daily use</h2>
+        <p><strong>PC Start Relay → Android Start SFA → Open BPSR</strong></p>
+        <p>You normally only need the full phone setup again if the PC LAN IP changes, the relay is upgraded, or the manager asks you to repair it.</p>
+      </article>
+
+      <article class="content-card">
+        <h2>Network note</h2>
+        <p>Use this on a trusted home/private LAN only. Do not port-forward relay port 10808. The phone → PC SOCKS5 hop is authenticated but not encrypted.</p>
+        <p>Use <strong>StarSEA</strong> as the DPS capture target, not BPSRMobileFront.</p>
+      </article>
+
+      <article class="download-panel">
+        <h2>Links</h2>
+        <div class="links-list">
+          <a href="https://github.com/Zudin987/BPSR-Android-DPSMeter-Relay#readme"><span>GitHub README</span><span>→</span></a>
+          <a href="https://github.com/Zudin987/BPSR-Android-DPSMeter-Relay/releases/latest"><span>Latest release</span><span>→</span></a>
+          <a href="https://github.com/Zudin987/BPSR-Android-DPSMeter-Relay"><span>Source</span><span>→</span></a>
+        </div>
+      </article>
+    </div></section>
+  </main>
+
+  <footer class="site-footer"><div class="shell footer-inner"><span>© <span id="year">2026</span> Zudin987 / MrEz</span><span>Unofficial BPSR community tool.</span></div></footer>
+</body>
+</html>
