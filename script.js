@@ -45,9 +45,15 @@ for (const repo of repos) {
         node.textContent = [release.tag_name || release.name || 'Latest release', dateText].filter(Boolean).join(' · ');
       });
 
-      document.querySelectorAll(`[data-release-asset][data-release-repo="${repo}"]`).forEach(link => {
-        const match = link.dataset.releaseAsset;
-        const asset = Array.isArray(release.assets) ? release.assets.find(item => item.name === match || item.name.includes(match)) : null;
+      document.querySelectorAll(`[data-release-repo="${repo}"][data-release-asset], [data-release-repo="${repo}"][data-release-asset-suffix]`).forEach(link => {
+        const exactMatch = link.dataset.releaseAsset;
+        const suffixMatch = link.dataset.releaseAssetSuffix;
+        const assets = Array.isArray(release.assets) ? release.assets : [];
+        const asset = assets.find(item => {
+          if (exactMatch && (item.name === exactMatch || item.name.includes(exactMatch))) return true;
+          if (suffixMatch && item.name.endsWith(suffixMatch)) return true;
+          return false;
+        });
         if (asset?.browser_download_url) link.href = asset.browser_download_url;
       });
     })
