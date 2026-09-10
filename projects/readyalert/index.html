@@ -3,103 +3,49 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="BPSR Ready Alert for Windows: Ready/queue alerts plus an optional chat overlay with filters, English translation and Guild/Party TTS.">
-  <meta name="theme-color" content="#080b1f">
-  <meta property="og:title" content="BPSR Ready Alert — Zudin987 / MrEz Tools">
-  <meta property="og:description" content="Ready/queue alerts plus an optional BPSR chat overlay with translation and Guild/Party TTS.">
+  <meta name="description" content="Queue alerts, combat meters and live encounter tracking, with an optional chat overlay.">
+  <meta name="theme-color" content="#141619">
+  <meta property="og:title" content="BPSR ReadyAlert · MrEz / Zudin987">
+  <meta property="og:description" content="Queue alerts, combat meters and live encounter tracking, with an optional chat overlay.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://zudin987.github.io/projects/readyalert/">
   <link rel="canonical" href="https://zudin987.github.io/projects/readyalert/">
-  <title>BPSR Ready Alert — Zudin987 / MrEz Tools</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="/theme.css">
-  <script>document.documentElement.classList.add('js')</script>
-  <script src="/script.js" defer></script>
+  <title>BPSR ReadyAlert · MrEz / Zudin987</title>
+
 </head>
-<body class="theme-ready">
-  <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header"><div class="shell header-inner">
-    <a class="brand" href="/">Zudin987 / MrEz Tools</a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="/">Home</a><a href="https://github.com/Zudin987/BPSR-ReadyAlert">GitHub</a></nav>
-  </div></header>
-
-  <main id="main">
-    <nav class="shell breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><span>Ready Alert</span></nav>
-
-    <section class="product-hero shell">
-      <p class="eyebrow">Windows · BPSR · Portable</p>
-      <h1>BPSR Ready Alert</h1>
-      <p class="product-lede">Ready/queue alerts plus an optional view-only BPSR chat overlay with filters, English translation and Guild/Party TTS.</p>
-      <div class="product-actions"><a class="button" href="https://github.com/Zudin987/BPSR-ReadyAlert/releases/latest/download/BPSR-ReadyAlert.exe">Download latest EXE</a></div>
-      <p class="release-line">Latest release: <span data-release-meta data-release-repo="Zudin987/BPSR-ReadyAlert" aria-live="polite">checking…</span></p>
-    </section>
-
-    <section class="product-section"><div class="shell">
-      <article class="content-card">
-        <h2>Use</h2>
-        <ol class="step-list">
-          <li>Make sure Npcap is installed.</li>
-          <li>Open BPSR Ready Alert.</li>
-          <li>Select Resonance Logs CN or the correct network adapter if auto-detection misses it.</li>
-          <li>Leave it running in the system tray.</li>
-          <li>Enable Chat Overlay only if you want the chat window, translation or TTS.</li>
-        </ol>
-      </article>
-
-      <article class="content-card">
-        <h2>What it does</h2>
-        <ul class="feature-list">
-          <li>Matchmaking / Ready Check sound alerts and optional desktop notifications.</li>
-          <li>Optional chat overlay with World, Guild/Team, All and custom tabs.</li>
-          <li>Filters, keyword sounds, opacity, click-through, Always on Top and smoother follow-latest scrolling.</li>
-          <li>Optional English translation for World, Guild and Party / Team chat.</li>
-          <li>Optional English TTS for Guild and Party / Team only. World chat is never spoken.</li>
-          <li>Alerts + chat share one Npcap capture pipeline.</li>
-        </ul>
-      </article>
-
-      <article class="content-card">
-        <h2>Audio controls</h2>
-        <p>ReadyAlert keeps its three audio volumes separate so one feature cannot accidentally change another:</p>
-        <ul class="feature-list">
-          <li><strong>Ready / Queue volume</strong> — matchmaking and Ready Check alerts.</li>
-          <li><strong>Chat alert volume</strong> — keyword and Private/Talk sounds.</li>
-          <li><strong>TTS volume</strong> — spoken Guild / Party chat only.</li>
-        </ul>
-        <p>The TTS toolbar also shows its state clearly: green = active, red = off, amber = enabled but muted or no speech channel is selected.</p>
-      </article>
-
-      <article class="content-card">
-        <h2>v1.2.1 reliability changes</h2>
-        <ul class="feature-list">
-          <li>Settings clearly show Saved, Unsaved, or Applied — not saved states.</li>
-          <li>Blocked players are suppressed from overlay rows, chat sounds, translation and not-yet-playing TTS.</li>
-          <li>Npcap adapter switching preflights the new adapter and rolls back if the switch fails.</li>
-          <li>Large chat bursts use bounded UI work so the overlay stays responsive.</li>
-          <li>Clipboard and diagnostics interactions are hardened against common Windows UI errors.</li>
-        </ul>
-      </article>
-
-      <article class="content-card">
-        <h2>Notes</h2>
-        <p>Npcap is required and is not bundled. ReadyAlert can run beside Resonance Logs CN and can auto-launch it.</p>
-        <p>ReadyAlert does not inject into BPSR, replace game files, send chat, or automate gameplay.</p>
-        <p>Translation/TTS use no-key Google Translate/gTTS-style web endpoints. They can be rate-limited or changed upstream; failures do not stop normal Ready/Queue alerts or local chat capture.</p>
-      </article>
-
-      <article class="download-panel">
-        <h2>Links</h2>
-        <div class="links-list">
-          <a href="https://github.com/Zudin987/BPSR-ReadyAlert#readme"><span>GitHub README</span><span>→</span></a>
-          <a href="https://github.com/Zudin987/BPSR-ReadyAlert/releases/latest"><span>Latest release</span><span>→</span></a>
-          <a href="https://github.com/Zudin987/BPSR-ReadyAlert"><span>Source</span><span>→</span></a>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/" aria-label="MrEz / Zudin987 home">MrEz <span>/ Zudin987</span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/#bpsr-tools">BPSR tools</a>
+        <a href="/#other-tools">Other tools</a>
+        <a href="https://github.com/Zudin987">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="shell" tabindex="-1">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/#bpsr-tools">BPSR tools</a><span aria-hidden="true">/</span><span aria-current="page">BPSR ReadyAlert</span></nav>
+      <header class="project-header">
+        <p class="eyebrow">Windows · x64</p>
+        <h1>BPSR ReadyAlert</h1>
+        <p class="lede">A lightweight Windows companion for Blue Protocol: Star Resonance. Follow your party’s combat, track the current encounter and hear when a queue is ready.</p>
+        <div class="project-actions">
+          <a href="https://github.com/Zudin987/BPSR-ReadyAlert/releases/latest" class="button">Download latest release</a>
+          <a href="https://github.com/Zudin987/BPSR-ReadyAlert#readme" class="button secondary">Read documentation</a>
         </div>
-      </article>
-    </div></section>
+        <div class="resource-links"><a href="https://github.com/Zudin987/BPSR-ReadyAlert">View source on GitHub</a><a href="https://github.com/Zudin987/BPSR-ReadyAlert/issues">Report an issue</a></div>
+      </header>
+      <div class="project-layout"><div class="project-main">
+        <section aria-labelledby="features"><h2 id="features">What it does</h2><ul class="feature-list"><li>DPS, healing and tank meters with encounter history, exports and player inspection.</li><li>Live target HP and Enrage timer, dungeon mechanics, Food/Serum and Imagine tracking.</li><li>Ready and party alerts, plus a view-only chat overlay with optional translation and text-to-speech.</li></ul></section><section aria-labelledby="setup"><h2 id="setup">Quick start</h2><ol class="steps"><li>Install Npcap, then download BPSR-ReadyAlert.exe from the latest release.</li><li>Run the app and open BPSR. If capture is empty, choose the correct network adapter in Settings.</li><li>Enable the overlays you want. Ctrl+Shift+F10 toggles the DPS and Mechanics overlays.</li></ol></section><section aria-labelledby="docs"><h2 id="docs">Further reading</h2><ul class="doc-links"><li><a href="https://github.com/Zudin987/BPSR-ReadyAlert/blob/main/docs/DEVELOPMENT.md">Build and development</a></li></ul></section></div><aside class="project-aside" aria-label="Requirements and limitations"><section><h2>Requirements</h2><ul class=""><li>64-bit Windows</li><li>Npcap, installed separately</li><li>A supported BPSR client</li></ul><a href="https://npcap.com/#download" class="text-action">Get Npcap</a></section><section><h2>Before you use it</h2><p>Reads network traffic through Npcap. It does not inject into the game or automate gameplay.</p><p>Optional translation and speech use online services. Game or service updates can affect those features.</p></section></aside></div>
   </main>
-
-  <footer class="site-footer"><div class="shell footer-inner"><span>© <span id="year">2026</span> Zudin987 / MrEz</span><span>Unofficial BPSR community tool.</span></div></footer>
+  <footer class="site-footer shell">
+    <span>MrEz / Zudin987</span>
+    <p>Unofficial BPSR community tool. Not affiliated with the game’s developers or publishers.</p>
+    <a href="https://github.com/Zudin987/Zudin987.github.io">Website source</a>
+  </footer>
 </body>
 </html>

@@ -3,74 +3,49 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Use a PC BPSR DPS meter while playing BPSR on Android.">
-  <meta name="theme-color" content="#080b1f">
+  <meta name="description" content="Play BPSR on Android while a compatible Windows DPS meter reads the combat traffic.">
+  <meta name="theme-color" content="#141619">
+  <meta property="og:title" content="BPSR Android DPSMeter Relay · MrEz / Zudin987">
+  <meta property="og:description" content="Play BPSR on Android while a compatible Windows DPS meter reads the combat traffic.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zudin987.github.io/projects/android-relay/">
   <link rel="canonical" href="https://zudin987.github.io/projects/android-relay/">
-  <title>BPSR Android DPSMeter Relay — Zudin987 / MrEz Tools</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="/theme.css">
-  <script>document.documentElement.classList.add('js')</script>
-  <script src="/script.js" defer></script>
+  <title>BPSR Android DPSMeter Relay · MrEz / Zudin987</title>
+
 </head>
-<body class="theme-android-relay">
-  <a class="skip-link" href="#main">Skip to main content</a>
-  <header class="site-header"><div class="shell header-inner">
-    <a class="brand" href="/">Zudin987 / MrEz Tools</a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav id="site-nav" class="site-nav" aria-label="Main navigation"><a href="/">Home</a><a href="https://github.com/Zudin987/BPSR-Android-DPSMeter-Relay">GitHub</a></nav>
-  </div></header>
-
-  <main id="main">
-    <nav class="shell breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><span>Android DPSMeter Relay</span></nav>
-
-    <section class="product-hero shell">
-      <p class="eyebrow">Windows + Android · BPSR</p>
-      <h1>BPSR Android DPSMeter Relay</h1>
-      <p class="product-lede">Play BPSR on Android while a compatible DPS meter captures the relayed traffic on your PC.</p>
-      <div class="product-actions">
-        <a class="button" data-release-repo="Zudin987/BPSR-Android-DPSMeter-Relay" data-release-asset-suffix=".zip" href="https://github.com/Zudin987/BPSR-Android-DPSMeter-Relay/releases/latest">Download ZIP</a>
-        <a class="button secondary" href="https://github.com/Zudin987/BPSR-Android-DPSMeter-Relay/releases/latest">GitHub release</a>
-      </div>
-      <p class="release-line">Latest release: <span data-release-meta data-release-repo="Zudin987/BPSR-Android-DPSMeter-Relay" aria-live="polite">checking…</span></p>
-    </section>
-
-    <section class="product-section"><div class="shell">
-      <article class="content-card">
-        <h2>First setup</h2>
-        <ol class="step-list">
-          <li>Download and extract the latest ZIP, then run BPSR Relay Manager.</li>
-          <li>Select the PC network address connected to the same router as your phone.</li>
-          <li>Prepare Relay → Allow Firewall → Start Phone Setup.</li>
-          <li>Scan/import the QR profile in Android SFA and route BPSR only.</li>
-          <li>Start Relay on PC, start SFA on the phone, then open BPSR.</li>
-          <li>Set your compatible DPS meter capture/process target to <strong>StarSEA</strong>.</li>
-        </ol>
-      </article>
-
-      <article class="content-card">
-        <h2>Daily use</h2>
-        <p><strong>PC Start Relay → Android Start SFA → Open BPSR</strong></p>
-        <p>You normally only need the full phone setup again if the PC LAN IP changes, the relay is upgraded, or the manager asks you to repair it.</p>
-      </article>
-
-      <article class="content-card">
-        <h2>Network note</h2>
-        <p>Use this on a trusted home/private LAN only. Do not port-forward relay port 10808. The phone → PC SOCKS5 hop is authenticated but not encrypted.</p>
-        <p>Use <strong>StarSEA</strong> as the DPS capture target, not BPSRMobileFront.</p>
-      </article>
-
-      <article class="download-panel">
-        <h2>Links</h2>
-        <div class="links-list">
-          <a href="https://github.com/Zudin987/BPSR-Android-DPSMeter-Relay#readme"><span>GitHub README</span><span>→</span></a>
-          <a href="https://github.com/Zudin987/BPSR-Android-DPSMeter-Relay/releases/latest"><span>Latest release</span><span>→</span></a>
-          <a href="https://github.com/Zudin987/BPSR-Android-DPSMeter-Relay"><span>Source</span><span>→</span></a>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/" aria-label="MrEz / Zudin987 home">MrEz <span>/ Zudin987</span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/#bpsr-tools">BPSR tools</a>
+        <a href="/#other-tools">Other tools</a>
+        <a href="https://github.com/Zudin987">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="shell" tabindex="-1">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/#bpsr-tools">BPSR tools</a><span aria-hidden="true">/</span><span aria-current="page">BPSR Android DPSMeter Relay</span></nav>
+      <header class="project-header">
+        <p class="eyebrow">Windows + Android</p>
+        <h1>BPSR Android DPSMeter Relay</h1>
+        <p class="lede">Connect your phone to a PC combat meter over your home network. The Windows manager guides relay setup while you continue playing BPSR on Android.</p>
+        <div class="project-actions">
+          <a href="https://github.com/Zudin987/BPSR-Android-DPSMeter-Relay/releases/latest" class="button">Download latest release</a>
+          <a href="https://github.com/Zudin987/BPSR-Android-DPSMeter-Relay#readme" class="button secondary">Read documentation</a>
         </div>
-      </article>
-    </div></section>
+        <div class="resource-links"><a href="https://github.com/Zudin987/BPSR-Android-DPSMeter-Relay">View source on GitHub</a><a href="https://github.com/Zudin987/BPSR-Android-DPSMeter-Relay/issues">Report an issue</a></div>
+      </header>
+      <div class="project-layout"><div class="project-main">
+        <section aria-labelledby="features"><h2 id="features">What it does</h2><ul class="feature-list"><li>Guided phone setup with a QR profile for SFA (sing-box for Android).</li><li>Works with compatible meters that can parse BPSR traffic from the StarSEA process.</li><li>Separate Home, Details and Help views for everyday use and troubleshooting.</li></ul></section><section aria-labelledby="setup"><h2 id="setup">Quick start</h2><ol class="steps"><li>Extract the full release ZIP and open BPSR Relay Manager.exe on your PC.</li><li>Choose the PC’s LAN address. Follow Prepare Relay, Allow Firewall and Start Phone Setup; import the profile in SFA and route BPSR only.</li><li>Start Relay on the PC, start SFA on the phone, then open BPSR. Select StarSEA in your PC DPS meter.</li></ol></section></div><aside class="project-aside" aria-label="Requirements and limitations"><section><h2>Requirements</h2><ul class=""><li>Windows PC and Android phone on the same trusted LAN</li><li>SFA on Android</li><li>A separate compatible PC DPS meter</li><li>Administrator approval for the Windows firewall rule</li></ul></section><section><h2>Before you use it</h2><p>This is a relay, not a combat meter. Choose StarSEA as the capture target, not BPSRMobileFront.</p><p>The phone-to-PC connection is authenticated but not encrypted. Keep it on a trusted private network and do not port-forward port 10808.</p></section></aside></div>
   </main>
-
-  <footer class="site-footer"><div class="shell footer-inner"><span>© <span id="year">2026</span> Zudin987 / MrEz</span><span>Unofficial BPSR community tool.</span></div></footer>
+  <footer class="site-footer shell">
+    <span>MrEz / Zudin987</span>
+    <p>Unofficial BPSR community tool. Not affiliated with the game’s developers or publishers.</p>
+    <a href="https://github.com/Zudin987/Zudin987.github.io">Website source</a>
+  </footer>
 </body>
 </html>

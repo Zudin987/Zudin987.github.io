@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Read Malay and Malaysian English messages aloud in Discord voice channels from your own Windows bot.">
+  <meta name="theme-color" content="#141619">
+  <meta property="og:title" content="Malay TTS Bot · MrEz / Zudin987">
+  <meta property="og:description" content="Read Malay and Malaysian English messages aloud in Discord voice channels from your own Windows bot.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zudin987.github.io/projects/malay-tts/">
+  <link rel="canonical" href="https://zudin987.github.io/projects/malay-tts/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Malay TTS Bot · MrEz / Zudin987</title>
+
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/" aria-label="MrEz / Zudin987 home">MrEz <span>/ Zudin987</span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/#bpsr-tools">BPSR tools</a>
+        <a href="/#other-tools">Other tools</a>
+        <a href="https://github.com/Zudin987">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="shell" tabindex="-1">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/#other-tools">Other tools</a><span aria-hidden="true">/</span><span aria-current="page">Malay TTS Bot</span></nav>
+      <header class="project-header">
+        <p class="eyebrow">Windows · Discord</p>
+        <h1>Malay TTS Bot</h1>
+        <p class="lede">A self-hosted Discord text-to-speech bot for Malaysian Malay and Malaysian English. Runs on Windows with Gemini speech and a Google fallback, without a local AI model.</p>
+        <div class="project-actions">
+          <a href="https://github.com/Zudin987/Malay-TTS-Bot/releases/latest" class="button">Download latest release</a>
+          <a href="https://github.com/Zudin987/Malay-TTS-Bot#readme" class="button secondary">Read documentation</a>
+        </div>
+        <div class="resource-links"><a href="https://github.com/Zudin987/Malay-TTS-Bot">View source on GitHub</a><a href="https://github.com/Zudin987/Malay-TTS-Bot/issues">Report an issue</a></div>
+      </header>
+      <div class="project-layout"><div class="project-main">
+        <section aria-labelledby="features"><h2 id="features">What it does</h2><ul class="feature-list"><li>Speaks eligible chat messages and announces the sender separately.</li><li>Voice selection, pronunciation controls and per-user text-to-speech opt-out.</li><li>A separate /ask command for short AI answers, plus status and privacy commands.</li></ul></section><section aria-labelledby="setup"><h2 id="setup">Quick start</h2><ol class="steps"><li>Download the CLEAN ZIP and extract it into an empty C:\Malay-TTS-Bot folder.</li><li>Follow the README to configure your Discord bot and .env credentials. For an upgrade, restore only .env and data\guilds.json.</li><li>Run setup-clean.cmd as administrator, then start the Malay TTS Bot task. Join a voice channel and use /join.</li></ol></section><section aria-labelledby="docs"><h2 id="docs">Further reading</h2><ul class="doc-links"><li><a href="https://github.com/Zudin987/Malay-TTS-Bot/blob/main/MAINTENANCE.md">Maintenance and troubleshooting</a></li></ul></section></div><aside class="project-aside" aria-label="Requirements and limitations"><section><h2>Requirements</h2><ul class=""><li>Windows 11 PC that stays on while the bot runs</li><li>Your own Discord bot with Message Content Intent</li><li>Gemini API key for Gemini speech and /ask</li><li>Administrator access for Task Scheduler setup</li></ul></section><section><h2>Before you use it</h2><p>Setup registers a Windows SYSTEM task. Keep .env private and follow the README’s clean-install instructions.</p><p>Eligible message text is sent to speech providers, and sender names go to Google. Use /ttsprivacy for details and /ttsoptout for normal-chat opt-out.</p></section></aside></div>
+  </main>
+  <footer class="site-footer shell">
+    <span>MrEz / Zudin987</span>
+    <p>Independent tools by MrEz.</p>
+    <a href="https://github.com/Zudin987/Zudin987.github.io">Website source</a>
+  </footer>
+</body>
+</html>
