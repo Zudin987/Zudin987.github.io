@@ -57,7 +57,7 @@ def home():
     content = '''<section class="intro" aria-labelledby="intro-title">
       <p class="eyebrow">Independent software</p>
       <h1 id="intro-title">Tools I build and use.</h1>
-      <p>I’m Zudin987, also known as MrEz. I build Windows and Android tools for Blue Protocol: Star Resonance, music, streaming and Discord.</p>
+      <p>I’m MrEz. I build Windows and Android tools for Blue Protocol: Star Resonance, music, streaming and Discord.</p>
     </section>'''
     for category, anchor, title, description in [
         ("bpsr", "bpsr-tools", "BPSR tools", "Unofficial community tools for Blue Protocol: Star Resonance."),
