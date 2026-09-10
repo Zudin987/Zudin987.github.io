@@ -2,7 +2,7 @@
 
 The project directory at **[zudin987.github.io](https://zudin987.github.io/)**. Concise introductions, requirements and download links for Windows, Android and BPSR tools.
 
-The site serves static HTML and one stylesheet. Navigation and downloads work without JavaScript, external fonts or runtime API calls. GitHub Pages publishes the committed files from `main` using the existing Pages workflow.
+The site serves static HTML and CSS plus a small `release-meta.js` helper. Navigation remains static; release dates and direct download targets are resolved from each project's latest public GitHub release, with the normal Releases page left as a safe fallback if the API is unavailable. GitHub Pages publishes the committed files from `main` using the existing Pages workflow.
 
 ## Update a project
 
@@ -10,7 +10,7 @@ The site serves static HTML and one stylesheet. Navigation and downloads work wi
 2. Run `python3 scripts/build.py` (or `python scripts/build.py` on Windows).
 3. Commit the metadata and generated HTML together. Keep existing project slugs so old links continue to work.
 
-The shared page shell is in [`templates/base.html`](templates/base.html); page generation is in [`scripts/build.py`](scripts/build.py); the visual system is in [`styles.css`](styles.css). No third-party Python packages or Node dependencies are required.
+The shared page shell is in [`templates/base.html`](templates/base.html); page generation is in [`scripts/build.py`](scripts/build.py); the visual system is in [`styles.css`](styles.css); latest-release dates and direct asset selection are handled by [`release-meta.js`](release-meta.js). No third-party Python packages or Node dependencies are required.
 
 ## Preview and check
 
@@ -24,7 +24,7 @@ Open `http://localhost:8000`. Before committing, run:
 python3 scripts/build.py --check
 ```
 
-Check a desktop and phone layout after CSS changes. Keep download links pointed at GitHub Releases rather than embedding a version number. The generator also maintains the sitemap, 404 page and `/projects/` directory redirect.
+Check a desktop and phone layout after CSS changes. Keep generated download links pointed at GitHub Releases rather than embedding a version number; `release-meta.js` upgrades supported Download links to the current release asset at runtime. The generator also maintains the sitemap, 404 page and `/projects/` directory redirect.
 
 Real screenshots belong in `assets/screenshots/`, with their source recorded below. Do not substitute mock application interfaces.
 
