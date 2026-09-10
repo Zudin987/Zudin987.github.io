@@ -74,6 +74,7 @@ def project_page(project):
     name, repo = project["name"], repo_url(project)
     category = "BPSR tools" if project["category"] == "bpsr" else "Other tools"
     anchor = "bpsr-tools" if project["category"] == "bpsr" else "other-tools"
+    support = link(repo + "/issues", "Report an issue") if project.get("issues_enabled", True) else link(repo + "/pulls", "View pull requests")
     content = f'''<nav class="breadcrumb" aria-label="Breadcrumb">{link('/#' + anchor, category)}<span aria-hidden="true">/</span><span aria-current="page">{e(name)}</span></nav>
       <header class="project-header">
         <p class="eyebrow">{e(project['platform'])}</p>
@@ -83,7 +84,7 @@ def project_page(project):
           {link(download_url(project), project.get('download_label', 'Download latest release'), 'button')}
           {link(repo + '#readme', 'Read documentation', 'button secondary')}
         </div>
-        <div class="resource-links">{link(repo, 'View source on GitHub')}{link(repo + '/issues', 'Report an issue')}</div>
+        <div class="resource-links">{link(repo, 'View source on GitHub')}{support}</div>
       </header>
       <div class="project-layout"><div class="project-main">
         <section aria-labelledby="features"><h2 id="features">What it does</h2>{items(project['features'], css='feature-list')}</section>'''

@@ -122,7 +122,8 @@
     ],
     "notes": [
       "Uses Android’s VPN slot for local capture, so another VPN cannot run at the same time. This is not a remote VPN service.",
-      "Combat data stays on your device. Protocol updates may require a new app version."
+      "Combat data stays on your device. Protocol updates may require a new app version.",
+      "Issue tracking is disabled for this repository. Proposed fixes can be submitted through GitHub pull requests."
     ],
     "docs": [
       {
@@ -133,7 +134,8 @@
         "label": "Build and APK architecture guide",
         "path": "BUILDING.md"
       }
-    ]
+    ],
+    "issues_enabled": false
   },
   {
     "slug": "android-relay",
@@ -301,13 +303,15 @@
     ],
     "notes": [
       "APK availability varies by app and build. This is a community fork, not an official Morphe distribution.",
-      "Only publish third-party APKs when you have the right to redistribute them. Upstream credits and GPLv3 terms remain in the repository."
+      "Only publish third-party APKs when you have the right to redistribute them. Upstream credits and GPLv3 terms remain in the repository.",
+      "Issue tracking is disabled for this repository. Proposed fixes can be submitted through GitHub pull requests."
     ],
     "docs": [
       {
         "label": "Setup and configuration guide",
         "path": "CONTRIBUTING.md"
       }
-    ]
+    ],
+    "issues_enabled": false
   }
 ]

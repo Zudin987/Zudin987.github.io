@@ -8,7 +8,7 @@
   --accent: #9bc1ff;
   --accent-hover: #bed7ff;
   font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 16px;
+  font-size: 100%;
   line-height: 1.6;
   background: var(--bg);
   color: var(--text);
@@ -104,7 +104,7 @@ td { color: var(--muted); }
 @media (max-width: 860px) {
   .catalog-section { grid-template-columns: 145px minmax(0, 1fr); gap: 1.75rem; }
   .project-row { grid-template-columns: minmax(0, 1fr); }
-  .row-actions { flex-direction: row; align-items: center; gap: 1rem; }
+  .row-actions { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 1rem; }
   .project-layout { grid-template-columns: minmax(0, 1fr) 235px; gap: 2rem; }
   .project-aside { padding-left: 1.25rem; }
 }
