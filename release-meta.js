@@ -1,6 +1,13 @@
 (() => {
   const OWNER = 'Zudin987';
-  const CACHE_TTL_MS = 30 * 60 * 1000;
+  const FALLBACK_CACHE_MAX_AGE_MS = 24 * 60 * 60 * 1000;
+  const stableAssetNames = {
+    'BPSR-ReadyAlert': 'BPSR-ReadyAlert.exe',
+    'BPSR-MIDI-Lite': 'BPSR-MIDI-Lite.exe',
+    'BPSR-Android-DPSMeter-Relay': 'BPSR-Android-DPSMeter-Relay.zip',
+    'BPSR-CustomPFP-Lite': 'BPSR-CustomPFP-Lite-Windows.zip',
+    'BPSR-Portable-Stream-Kit': 'StreamKit-win-x64.zip',
+  };
   const assetPickers = {
     'BPSR-ReadyAlert': assets => assets.find(asset => asset.name === 'BPSR-ReadyAlert.exe'),
     'BPSR-MIDI-Lite': assets => assets.find(asset => asset.name === 'BPSR-MIDI-Lite.exe'),
@@ -39,7 +46,7 @@
   function readCache(repo) {
     try {
       const cached = JSON.parse(localStorage.getItem(`release-meta:${repo}`));
-      if (!cached || Date.now() - cached.savedAt > CACHE_TTL_MS) return null;
+      if (!cached || Date.now() - cached.savedAt > FALLBACK_CACHE_MAX_AGE_MS) return null;
       return cached.release;
     } catch {
       return null;
@@ -55,17 +62,21 @@
   }
 
   async function getLatestRelease(repo) {
-    const cached = readCache(repo);
-    if (cached) return cached;
+    try {
+      const response = await fetch(`https://api.github.com/repos/${OWNER}/${repo}/releases/latest`, {
+        headers: { Accept: 'application/vnd.github+json' },
+        cache: 'no-store',
+      });
+      if (!response.ok) throw new Error(`GitHub release lookup failed: ${response.status}`);
 
-    const response = await fetch(`https://api.github.com/repos/${OWNER}/${repo}/releases/latest`, {
-      headers: { Accept: 'application/vnd.github+json' },
-    });
-    if (!response.ok) throw new Error(`GitHub release lookup failed: ${response.status}`);
-
-    const release = await response.json();
-    writeCache(repo, release);
-    return release;
+      const release = await response.json();
+      writeCache(repo, release);
+      return release;
+    } catch (error) {
+      const cached = readCache(repo);
+      if (cached) return cached;
+      throw error;
+    }
   }
 
   function chooseAsset(repo, assets) {
@@ -83,31 +94,59 @@
     });
   }
 
+  function getOrCreateReleaseNote(context) {
+    if (context.classList.contains('project-row')) {
+      const meta = context.querySelector('.project-meta');
+      if (!meta) return null;
+      let item = meta.querySelector('[data-release-updated]');
+      if (!item) {
+        item = document.createElement('span');
+        item.dataset.releaseUpdated = '';
+        meta.append(item);
+      }
+      return item;
+    }
+
+    const resources = context.querySelector('.resource-links');
+    if (!resources) return null;
+    let item = resources.querySelector('[data-release-updated]');
+    if (!item) {
+      item = document.createElement('span');
+      item.dataset.releaseUpdated = '';
+      item.style.display = 'inline-flex';
+      item.style.alignItems = 'center';
+      item.style.minHeight = '44px';
+      item.style.color = 'var(--muted)';
+      resources.append(item);
+    }
+    return item;
+  }
+
   function updateReleaseNote(context, release) {
     const date = formatDate(release.published_at || release.created_at || release.updated_at);
     if (!date) return;
 
-    const text = `Updated ${date}${release.tag_name ? ` · ${release.tag_name}` : ''}`;
-    if (context.classList.contains('project-row')) {
-      const meta = context.querySelector('.project-meta');
-      if (!meta || meta.querySelector('[data-release-updated]')) return;
-      const item = document.createElement('span');
-      item.dataset.releaseUpdated = '';
-      item.textContent = text;
-      meta.append(item);
-      return;
-    }
+    const item = getOrCreateReleaseNote(context);
+    if (!item) return;
+    item.textContent = `Updated ${date}${release.tag_name ? ` · ${release.tag_name}` : ''}`;
+  }
 
-    const resources = context.querySelector('.resource-links');
-    if (!resources || resources.querySelector('[data-release-updated]')) return;
-    const item = document.createElement('span');
-    item.dataset.releaseUpdated = '';
-    item.textContent = text;
-    item.style.display = 'inline-flex';
-    item.style.alignItems = 'center';
-    item.style.minHeight = '44px';
-    item.style.color = 'var(--muted)';
-    resources.append(item);
+  function setDownloadLink(link, url, assetName) {
+    link.href = url;
+    if (assetName) {
+      link.title = `Download ${assetName}`;
+      link.setAttribute('aria-label', `Download ${assetName}`);
+    }
+  }
+
+  function setStableDownloadLinks(context, repo) {
+    const assetName = stableAssetNames[repo];
+    if (!assetName) return;
+    const url = `https://github.com/${OWNER}/${repo}/releases/latest/download/${encodeURIComponent(assetName)}`;
+    context.querySelectorAll('a').forEach(link => {
+      if (!/^Download\b/i.test(link.textContent.trim())) return;
+      setDownloadLink(link, url, assetName);
+    });
   }
 
   function updateDownloadLinks(context, repo, release) {
@@ -116,9 +155,7 @@
 
     context.querySelectorAll('a').forEach(link => {
       if (!/^Download\b/i.test(link.textContent.trim())) return;
-      link.href = asset.browser_download_url;
-      link.title = `Download ${asset.name}`;
-      link.setAttribute('aria-label', `Download ${asset.name}`);
+      setDownloadLink(link, asset.browser_download_url, asset.name);
     });
   }
 
@@ -126,6 +163,7 @@
   releaseContexts.forEach(context => {
     const repo = repoFromContext(context);
     if (!repo) return;
+    setStableDownloadLinks(context, repo);
     if (!grouped.has(repo)) grouped.set(repo, []);
     grouped.get(repo).push(context);
   });
@@ -139,7 +177,7 @@
         });
       })
       .catch(() => {
-        // Keep the existing GitHub Releases link as a safe fallback if the API is unavailable.
+        // Stable-name projects still download the newest asset. Other projects keep the Releases fallback.
       });
   });
 })();
