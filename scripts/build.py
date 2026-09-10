@@ -44,7 +44,7 @@ def project_row(project):
       <div class="project-copy">
         <h3 id="{slug}-title">{link('/projects/' + slug + '/', name)}</h3>
         <p>{e(project['summary'])}</p>
-        <p class="project-meta"><span>{e(project['platform'])}</span><span>{e(project['note'])}</span></p>
+        <p class="project-meta"><span>{e(project['platform'])}</span> <span>{e(project['note'])}</span></p>
       </div>
       <div class="row-actions">
         {link('/projects/' + slug + '/', 'View project', 'button secondary', 'View ' + name)}
