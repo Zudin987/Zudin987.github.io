@@ -1,0 +1,313 @@
+[
+  {
+    "slug": "readyalert",
+    "name": "BPSR ReadyAlert",
+    "repo": "BPSR-ReadyAlert",
+    "category": "bpsr",
+    "platform": "Windows · x64",
+    "summary": "Queue alerts, combat meters and live encounter tracking, with an optional chat overlay.",
+    "description": "A lightweight Windows companion for Blue Protocol: Star Resonance. Follow your party’s combat, track the current encounter and hear when a queue is ready.",
+    "note": "Npcap required",
+    "features": [
+      "DPS, healing and tank meters with encounter history, exports and player inspection.",
+      "Live target HP and Enrage timer, dungeon mechanics, Food/Serum and Imagine tracking.",
+      "Ready and party alerts, plus a view-only chat overlay with optional translation and text-to-speech."
+    ],
+    "steps": [
+      "Install Npcap, then download BPSR-ReadyAlert.exe from the latest release.",
+      "Run the app and open BPSR. If capture is empty, choose the correct network adapter in Settings.",
+      "Enable the overlays you want. Ctrl+Shift+F10 toggles the DPS and Mechanics overlays."
+    ],
+    "requirements": [
+      "64-bit Windows",
+      "Npcap, installed separately",
+      "A supported BPSR client"
+    ],
+    "requirement_link": {
+      "label": "Get Npcap",
+      "url": "https://npcap.com/#download"
+    },
+    "notes": [
+      "Reads network traffic through Npcap. It does not inject into the game or automate gameplay.",
+      "Optional translation and speech use online services. Game or service updates can affect those features."
+    ],
+    "docs": [
+      {
+        "label": "Build and development",
+        "path": "docs/DEVELOPMENT.md"
+      }
+    ]
+  },
+  {
+    "slug": "bpsr-midi",
+    "name": "BPSR MIDI Lite / Studio",
+    "repo": "BPSR-MIDI-Lite",
+    "category": "bpsr",
+    "platform": "Windows · x64",
+    "summary": "Play MIDI on BPSR instruments. Studio adds experimental audio-to-MIDI and four-part band arrangements.",
+    "description": "Play songs on Blue Protocol: Star Resonance instruments, solo or with a band. Use Lite for MIDI playback, or Studio to turn an audio file into an arrangement.",
+    "note": "Studio is experimental",
+    "features": [
+      "Browse local MIDI and Online Sequencer songs, then check notes against your instrument and unlocked category.",
+      "Use shared Band Mode playback across Lite and Studio.",
+      "Studio accepts local audio and can arrange Piano, Guitar, Bass and Drums for review and export."
+    ],
+    "variants": [
+      {
+        "name": "Lite",
+        "purpose": "MIDI playback and Band Mode, with the smaller download.",
+        "file": "BPSR-MIDI-Lite.exe"
+      },
+      {
+        "name": "Studio · beta",
+        "purpose": "Lite features plus audio transcription and Audio → Band. Extra models download on first use.",
+        "file": "BPSR-MIDI-Studio-Experimental-Beta.exe"
+      }
+    ],
+    "steps": [
+      "Download your chosen edition from Releases and open its EXE. No separate Python installation is needed.",
+      "Select your BPSR instrument and unlocked category, choose a song, then review Song Check.",
+      "Press Play and return to the game’s instrument screen before the countdown ends. Press F10 to stop."
+    ],
+    "requirements": [
+      "64-bit Windows and BPSR",
+      "Internet for online songs and first-time Studio setup",
+      "Additional disk space and processing time for Studio’s models"
+    ],
+    "notes": [
+      "Playback sends instrument key presses to the game. It does not modify game files.",
+      "Studio transcription is experimental. Review the result; dense songs can still contain incorrect or missing notes. Only process audio you have permission to use."
+    ],
+    "docs": [
+      {
+        "label": "Audio → Band setup and requirements",
+        "path": "STUDIO_BAND_ACCURATE.md"
+      },
+      {
+        "label": "YouTube transcription guide",
+        "path": "STUDIO.md"
+      }
+    ]
+  },
+  {
+    "slug": "bluemeter",
+    "name": "BlueMeter Lite",
+    "repo": "BPSR-BlueMeter-Lite",
+    "category": "bpsr",
+    "platform": "Android",
+    "summary": "See DPS, healing and damage received in a movable overlay, directly on your phone.",
+    "description": "An Android combat meter for Blue Protocol: Star Resonance. Keep combat statistics over the game without a PC.",
+    "note": "Local VPN capture · no PC needed",
+    "features": [
+      "DPS, healing and damage-received statistics with compact and expanded overlay modes.",
+      "Movable, resizable rankings with local-player highlighting and encounter history.",
+      "Processes supported BPSR traffic locally on your Android device."
+    ],
+    "screenshot": {
+      "src": "/assets/screenshots/bluemeter-expanded.png",
+      "alt": "BlueMeter Lite’s expanded Android overlay showing player damage, DPS and contribution above BPSR gameplay.",
+      "caption": "Expanded combat overlay on Android. Screenshot from the BlueMeter Lite repository.",
+      "width": 900,
+      "height": 686
+    },
+    "steps": [
+      "Download and install the APK from Releases. Choose arm64-v8a for most modern Android phones.",
+      "Open BlueMeter Lite, allow Display over other apps, then tap Start DPS Meter and approve the VPN prompt.",
+      "Open BPSR and enter combat. Move or resize the overlay to suit your screen."
+    ],
+    "requirements": [
+      "Android with a supported BPSR client",
+      "Permission to display over other apps",
+      "Android’s local VPN permission"
+    ],
+    "notes": [
+      "Uses Android’s VPN slot for local capture, so another VPN cannot run at the same time. This is not a remote VPN service.",
+      "Combat data stays on your device. Protocol updates may require a new app version."
+    ],
+    "docs": [
+      {
+        "label": "Privacy and permissions",
+        "path": "PRIVACY.md"
+      },
+      {
+        "label": "Build and APK architecture guide",
+        "path": "BUILDING.md"
+      }
+    ]
+  },
+  {
+    "slug": "android-relay",
+    "name": "BPSR Android DPSMeter Relay",
+    "repo": "BPSR-Android-DPSMeter-Relay",
+    "category": "bpsr",
+    "platform": "Windows + Android",
+    "summary": "Play BPSR on Android while a compatible Windows DPS meter reads the combat traffic.",
+    "description": "Connect your phone to a PC combat meter over your home network. The Windows manager guides relay setup while you continue playing BPSR on Android.",
+    "note": "PC and phone on the same trusted LAN",
+    "features": [
+      "Guided phone setup with a QR profile for SFA (sing-box for Android).",
+      "Works with compatible meters that can parse BPSR traffic from the StarSEA process.",
+      "Separate Home, Details and Help views for everyday use and troubleshooting."
+    ],
+    "steps": [
+      "Extract the full release ZIP and open BPSR Relay Manager.exe on your PC.",
+      "Choose the PC’s LAN address. Follow Prepare Relay, Allow Firewall and Start Phone Setup; import the profile in SFA and route BPSR only.",
+      "Start Relay on the PC, start SFA on the phone, then open BPSR. Select StarSEA in your PC DPS meter."
+    ],
+    "requirements": [
+      "Windows PC and Android phone on the same trusted LAN",
+      "SFA on Android",
+      "A separate compatible PC DPS meter",
+      "Administrator approval for the Windows firewall rule"
+    ],
+    "notes": [
+      "This is a relay, not a combat meter. Choose StarSEA as the capture target, not BPSRMobileFront.",
+      "The phone-to-PC connection is authenticated but not encrypted. Keep it on a trusted private network and do not port-forward port 10808."
+    ],
+    "docs": []
+  },
+  {
+    "slug": "custompfp",
+    "name": "BPSR Custom PFP Lite",
+    "repo": "BPSR-CustomPFP-Lite",
+    "category": "bpsr",
+    "platform": "Windows",
+    "summary": "Crop a custom profile picture or card and follow a guided capture-and-restore workflow.",
+    "description": "Prepare a custom Blue Protocol: Star Resonance portrait or card with built-in cropping, numbered instructions and backup and restore controls.",
+    "note": "Temporarily modifies a game file",
+    "features": [
+      "Square portrait and card workflows with image cropping and repositioning.",
+      "Game-folder and picture-slot detection with manual fallbacks.",
+      "Install-specific backups and a guided restore step after capture."
+    ],
+    "steps": [
+      "Download and extract the Windows ZIP, then open the app and select your BPSR folder.",
+      "Choose and crop your image. Follow the app’s numbered steps to save the portrait or card in BPSR.",
+      "Restore the original BPSR file when you finish. Keep the backup until the app confirms restoration."
+    ],
+    "requirements": [
+      "Windows with BPSR installed",
+      "An image for your portrait or card",
+      "Write access to the game installation"
+    ],
+    "notes": [
+      "This method temporarily changes a BPSR client file. It is unofficial and is not guaranteed ban-safe.",
+      "If the game updates while a custom file is active, close BPSR and use the launcher’s Verify or Repair feature instead of forcing an old backup."
+    ],
+    "docs": [
+      {
+        "label": "Changes and recovery improvements",
+        "path": "CHANGELOG.md"
+      }
+    ]
+  },
+  {
+    "slug": "streamkit",
+    "name": "Portable Stream Kit",
+    "repo": "BPSR-Portable-Stream-Kit",
+    "category": "other",
+    "platform": "Windows · x64",
+    "summary": "Set up game capture, optional avatars and OBS scenes for Discord sharing or livestreaming.",
+    "description": "A portable Windows launcher that brings game capture, frames and optional avatars into one setup. Share through Discord or stream with OBS.",
+    "note": "Portable OBS bundle",
+    "features": [
+      "Choose a game, frame, avatar and destination, then reuse your choices with Quick Launch.",
+      "Share the OBS Program Projector in Discord or connect a Twitch account in OBS.",
+      "Use a talking PNG, connect VTube Studio for Live2D, or stream without an avatar."
+    ],
+    "steps": [
+      "Download StreamKit-win-x64.zip and extract the entire ZIP to a folder you can keep.",
+      "Open your game, run BPSRStreamKit.exe and choose your game, avatar, frame and destination.",
+      "Press the main start button. For Discord, share the OBS Program Projector window."
+    ],
+    "requirements": [
+      "64-bit Windows",
+      "The complete portable release folder",
+      "VTube Studio only if you want Live2D",
+      "TikTok LIVE/stream-key access only for TikTok streaming"
+    ],
+    "notes": [
+      "Keep OBS and its bundled plugins together. Update the bundle through a newer Stream Kit release.",
+      "VTube Studio is not included. Twitch sign-in happens in OBS; TikTok access depends on your account."
+    ],
+    "docs": [
+      {
+        "label": "Release history",
+        "path": "CHANGELOG.md"
+      }
+    ]
+  },
+  {
+    "slug": "malay-tts",
+    "name": "Malay TTS Bot",
+    "repo": "Malay-TTS-Bot",
+    "category": "other",
+    "platform": "Windows · Discord",
+    "summary": "Read Malay and Malaysian English messages aloud in Discord voice channels from your own Windows bot.",
+    "description": "A self-hosted Discord text-to-speech bot for Malaysian Malay and Malaysian English. Runs on Windows with Gemini speech and a Google fallback, without a local AI model.",
+    "note": "Your own Discord bot and API keys",
+    "features": [
+      "Speaks eligible chat messages and announces the sender separately.",
+      "Voice selection, pronunciation controls and per-user text-to-speech opt-out.",
+      "A separate /ask command for short AI answers, plus status and privacy commands."
+    ],
+    "steps": [
+      "Download the CLEAN ZIP and extract it into an empty C:\\Malay-TTS-Bot folder.",
+      "Follow the README to configure your Discord bot and .env credentials. For an upgrade, restore only .env and data\\guilds.json.",
+      "Run setup-clean.cmd as administrator, then start the Malay TTS Bot task. Join a voice channel and use /join."
+    ],
+    "requirements": [
+      "Windows 11 PC that stays on while the bot runs",
+      "Your own Discord bot with Message Content Intent",
+      "Gemini API key for Gemini speech and /ask",
+      "Administrator access for Task Scheduler setup"
+    ],
+    "notes": [
+      "Setup registers a Windows SYSTEM task. Keep .env private and follow the README’s clean-install instructions.",
+      "Eligible message text is sent to speech providers, and sender names go to Google. Use /ttsprivacy for details and /ttsoptout for normal-chat opt-out."
+    ],
+    "docs": [
+      {
+        "label": "Maintenance and troubleshooting",
+        "path": "MAINTENANCE.md"
+      }
+    ]
+  },
+  {
+    "slug": "morphe-builder",
+    "name": "builder-for-morphe",
+    "repo": "builder-for-morphe",
+    "category": "other",
+    "platform": "GitHub Actions · Android output",
+    "summary": "A personal fork for configuring and building Morphe-patched Android APKs with GitHub Actions.",
+    "description": "A personal fork of nvbangg/builder-for-morphe. Configure app builds, run the workflow and review the resulting APKs and build notes on GitHub.",
+    "note": "Developer tool · fork",
+    "download_label": "View published builds",
+    "download_path": "/releases",
+    "features": [
+      "Configure applications and patch sources in config.toml.",
+      "Run builds through GitHub Actions or follow the local build guide.",
+      "Review release assets and build notes for each app."
+    ],
+    "steps": [
+      "Read the repository’s setup guide and configure the applications in config.toml.",
+      "Run the CI workflow in your fork and review the build output.",
+      "Set ALLOW_PUBLIC_APK_RELEASES=false to keep generated releases as drafts."
+    ],
+    "requirements": [
+      "A GitHub fork with Actions enabled for your own builds",
+      "App and patch configuration",
+      "For local builds: Git, Python, uv and Java; see the setup guide"
+    ],
+    "notes": [
+      "APK availability varies by app and build. This is a community fork, not an official Morphe distribution.",
+      "Only publish third-party APKs when you have the right to redistribute them. Upstream credits and GPLv3 terms remain in the repository."
+    ],
+    "docs": [
+      {
+        "label": "Setup and configuration guide",
+        "path": "CONTRIBUTING.md"
+      }
+    ]
+  }
+]
