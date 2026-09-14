@@ -9,6 +9,8 @@
   <meta property="og:description" content="Queue alerts, combat meters and live encounter tracking, with an optional chat overlay.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://zudin987.github.io/projects/readyalert/">
+  <meta property="og:image" content="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-normal.png">
+  <meta property="og:image:alt" content="BPSR ReadyAlert DPS meter in Normal mode">
   <link rel="canonical" href="https://zudin987.github.io/projects/readyalert/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
@@ -40,8 +42,54 @@
         </div>
         <div class="resource-links"><a href="https://github.com/Zudin987/BPSR-ReadyAlert">View source on GitHub</a><a href="https://github.com/Zudin987/BPSR-ReadyAlert/issues">Report an issue</a></div>
       </header>
+
+      <figure class="project-hero-media">
+        <a href="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-normal.png" aria-label="Open full-size ReadyAlert Normal meter screenshot">
+          <img src="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-normal.png" alt="BPSR ReadyAlert DPS meter in Normal mode with player damage, classes and Imagines" decoding="async">
+        </a>
+        <figcaption>DPS meter - Normal mode</figcaption>
+      </figure>
+
       <div class="project-layout"><div class="project-main">
-        <section aria-labelledby="features"><h2 id="features">What it does</h2><ul class="feature-list"><li>DPS, healing and tank meters with encounter history, exports and player inspection.</li><li>Live target HP and Enrage timer, dungeon mechanics, Food/Serum and Imagine tracking.</li><li>Ready and party alerts, plus a view-only chat overlay with optional translation and text-to-speech.</li></ul></section><section aria-labelledby="setup"><h2 id="setup">Quick start</h2><ol class="steps"><li>Install Npcap, then download BPSR-ReadyAlert.exe from the latest release.</li><li>Run the app and open BPSR. If capture is empty, choose the correct network adapter in Settings.</li><li>Enable the overlays you want. Ctrl+Shift+F10 toggles the DPS and Mechanics overlays.</li></ol></section><section aria-labelledby="docs"><h2 id="docs">Further reading</h2><ul class="doc-links"><li><a href="https://github.com/Zudin987/BPSR-ReadyAlert/blob/main/docs/DEVELOPMENT.md">Build and development</a></li></ul></section></div><aside class="project-aside" aria-label="Requirements and limitations"><section><h2>Requirements</h2><ul class=""><li>64-bit Windows</li><li>Npcap, installed separately</li><li>A supported BPSR client</li></ul><a href="https://npcap.com/#download" class="text-action">Get Npcap</a></section><section><h2>Before you use it</h2><p>Reads network traffic through Npcap. It does not inject into the game or automate gameplay.</p><p>Optional translation and speech use online services. Game or service updates can affect those features.</p></section></aside></div>
+        <section aria-labelledby="features"><h2 id="features">What it does</h2><ul class="feature-list"><li>DPS, healing and tank meters with encounter history, exports and player inspection.</li><li>Live target HP and Enrage timer, dungeon mechanics, Food/Serum and Imagine tracking.</li><li>Ready and party alerts, plus a view-only chat overlay with optional translation and text-to-speech.</li></ul></section>
+
+        <section aria-labelledby="screenshots">
+          <h2 id="screenshots">Screenshots</h2>
+          <div class="screenshot-grid">
+            <figure>
+              <a href="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-raid.png" aria-label="Open full-size ReadyAlert Raid meter screenshot">
+                <img src="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-raid.png" alt="ReadyAlert Raid meter showing 20 players in two columns with damage and revive status" loading="lazy" decoding="async">
+              </a>
+              <figcaption>Raid - 20-player two-column layout</figcaption>
+            </figure>
+            <figure>
+              <a href="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-compact.png" aria-label="Open full-size ReadyAlert Compact meter screenshot">
+                <img src="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-compact.png" alt="ReadyAlert Compact meter with a smaller player list and damage values" loading="lazy" decoding="async">
+              </a>
+              <figcaption>Compact - essentials in less space</figcaption>
+            </figure>
+            <figure>
+              <a href="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-compact-raid.png" aria-label="Open full-size ReadyAlert Compact Raid meter screenshot">
+                <img src="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-compact-raid.png" alt="ReadyAlert Compact Raid meter showing 20 players in a smaller two-column layout" loading="lazy" decoding="async">
+              </a>
+              <figcaption>Compact Raid - 20 players with a smaller footprint</figcaption>
+            </figure>
+            <figure>
+              <a href="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/tracker-mechanics.png" aria-label="Open full-size ReadyAlert Tracker and Mechanics screenshot">
+                <img src="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/tracker-mechanics.png" alt="ReadyAlert Tracker and Mechanics overlay showing key stats, food and serum durations, and mechanic timers" loading="lazy" decoding="async">
+              </a>
+              <figcaption>Tracker &amp; Mechanics</figcaption>
+            </figure>
+            <figure class="screenshot-wide">
+              <a href="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/chat-overlay.png" aria-label="Open full-size ReadyAlert Chat Overlay screenshot">
+                <img src="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/chat-overlay.png" alt="ReadyAlert Chat Overlay with channel tabs, game messages and a text-to-speech control" loading="lazy" decoding="async">
+              </a>
+              <figcaption>Chat Overlay</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section aria-labelledby="setup"><h2 id="setup">Quick start</h2><ol class="steps"><li>Install Npcap, then download BPSR-ReadyAlert.exe from the latest release.</li><li>Run the app and open BPSR. If capture is empty, choose the correct network adapter in Settings.</li><li>Enable the overlays you want. Ctrl+Shift+F10 toggles the DPS and Mechanics overlays.</li></ol></section><section aria-labelledby="docs"><h2 id="docs">Further reading</h2><ul class="doc-links"><li><a href="https://github.com/Zudin987/BPSR-ReadyAlert/blob/main/docs/DEVELOPMENT.md">Build and development</a></li></ul></section></div><aside class="project-aside" aria-label="Requirements and limitations"><section><h2>Requirements</h2><ul class=""><li>64-bit Windows</li><li>Npcap, installed separately</li><li>A supported BPSR client</li></ul><a href="https://npcap.com/#download" class="text-action">Get Npcap</a></section><section><h2>Before you use it</h2><p>Reads network traffic through Npcap. It does not inject into the game or automate gameplay.</p><p>Optional translation and speech use online services. Game or service updates can affect those features.</p></section></aside></div>
   </main>
   <footer class="site-footer shell">
     <span>MrEz / Zudin987</span>
