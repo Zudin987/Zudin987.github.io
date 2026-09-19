@@ -23,5 +23,7 @@ jobs:
         run: python3 scripts/build.py --check
       - name: Check curated pages and local resources
         run: python3 scripts/validate_site.py
+      - name: Report real screenshot dimensions and availability
+        run: python3 scripts/audit_images.py
       - name: Check release helper syntax
         run: node --check release-meta.js
