@@ -73,14 +73,22 @@
     link.setAttribute('aria-label', `Download ${asset.name}`);
   }
 
-  function addLink(context, key, text, href, css) {
+  function addLink(context, key, text, href, css, assetName = null) {
+    // Project detail pages include fallback choices in their HTML. Upgrade them
+    // to a verified asset if available; never append a duplicate or guess a file.
+    const existing = context.querySelector(`[data-release-link="${key}"]`);
+    if (existing) {
+      if (assetName) updateLink(existing, { name: assetName, browser_download_url: href }, text);
+      return;
+    }
     const parent = context.querySelector(context.classList.contains('project-row') ? '.row-actions' : '.project-actions');
-    if (!parent || parent.querySelector(`[data-release-link="${key}"]`)) return;
+    if (!parent) return;
     const link = document.createElement('a');
     link.dataset.releaseLink = key;
     link.className = css;
     link.href = href;
     link.textContent = text;
+    if (assetName) link.setAttribute('aria-label', `Download ${assetName}`);
     parent.append(link);
   }
 
@@ -109,7 +117,7 @@
     }
     if (repo === 'BPSR-MIDI-Lite') {
       const studio = exactAsset(release, 'BPSR-MIDI-Studio-Experimental-Beta.exe');
-      if (studio) addLink(context, 'studio', 'Download Studio (Experimental)', studio.browser_download_url, context.classList.contains('project-row') ? 'text-action' : 'button secondary');
+      if (studio) addLink(context, 'studio', 'Download Studio (Experimental)', studio.browser_download_url, context.classList.contains('project-row') ? 'text-action' : 'button secondary', studio.name);
       addLink(context, 'all', 'All release files', releasesUrl(repo), 'text-action');
     }
     if (repo === 'BPSR-BlueMeter-Lite') {
@@ -126,6 +134,6 @@
   });
   grouped.forEach((group, repo) => {
     getRelease(repo).then(release => group.forEach(context => apply(context, repo, release)))
-      .catch(() => { /* Original Releases links remain valid and never guess an asset. */ });
+      .catch(() => { /* Pre-rendered Releases links remain valid. */ });
   });
 })();
