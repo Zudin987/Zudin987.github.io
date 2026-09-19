@@ -1,36 +1,30 @@
 # MrEz / Zudin987 tools
 
-The project directory at **[zudin987.github.io](https://zudin987.github.io/)**. Short introductions, requirements and download links for Windows, Android and BPSR tools.
+Project directory: **[zudin987.github.io](https://zudin987.github.io/)**. Short introductions, download links and setup guidance for Windows, Android and Blue Protocol: Star Resonance tools.
 
-This is a static GitHub Pages site. Its project pages come from `data/projects.json`, the shared template and `scripts/build.py`. `release-meta.js` adds current release dates and direct downloads when GitHub's API is available; the GitHub Releases links remain usable fallbacks. Pages publishes committed files from `main`.
+The site is static and published from `main` through GitHub Pages. `data/projects.json` defines the eight homepage entries and provides new-project scaffolding. `scripts/build.py` generates the homepage, sitemap, 404 and directory redirect. **Existing project detail pages are curated HTML**, because they contain genuine screenshots, galleries and project-specific metadata that the basic scaffold cannot recreate. The generator preserves them; edit `projects/<slug>/index.html` alongside `data/projects.json` when project information changes.
+
+`release-meta.js` resolves exact release files when the public GitHub API is available, with a short-lived browser cache. Original GitHub Releases links remain safe fallbacks. It never guesses a different binary if the expected asset is absent.
 
 ## Documentation standard
 
-Keep the homepage concise and each project page focused on **what it does, requirements, a three-step quick start and important limitations**. The project's GitHub README is the user-facing installation guide, not a copy of its changelog or technical design.
-
-Use a consistent README order: **purpose → latest download and website → key features → requirements → quick start → important safety/privacy notes → further reading**. A short project may need fewer sections; a relay or file-modifying tool must keep its safety instructions visible. Put long implementation notes, tuning, release validation and advanced troubleshooting into linked documents rather than deleting them. Prefer stable `/releases/latest` links to hard-coded versions. Keep names, instructions and platform requirements consistent with `data/projects.json`.
+Keep the homepage concise and project pages focused on **what it does, requirements, a quick start and important limitations**. GitHub READMEs are the user-facing installation guides, not copies of changelogs or technical designs. A practical order is purpose → downloads and website → key features → requirements → quick start → safety/privacy → further reading. Short projects may need fewer sections; retain full network, backup and privacy warnings where necessary. Move extended technical information into linked documents, but keep one authoritative installation guide.
 
 ## Update a project
 
-1. Edit [`data/projects.json`](data/projects.json). Verify feature claims, file names and requirements against the project repository and published releases.
-2. Run `python3 scripts/build.py` (or `python scripts/build.py` on Windows).
-3. Commit the metadata and generated pages together. Keep existing project slugs so links remain valid.
+1. Verify current features, release assets and requirements against the relevant app repository. Update `data/projects.json`.
+2. Edit its existing `projects/<slug>/index.html`, including its title, canonical URL, setup steps, screenshots and Open Graph metadata where applicable. For a new project, running the generator scaffolds a basic page to customize.
+3. Run `python3 scripts/build.py`, then `python3 scripts/build.py --check` and `python3 scripts/validate_site.py`. Also run `node --check release-meta.js` after JavaScript changes. Commit metadata and affected HTML together.
 
-The shared page shell is in [`templates/base.html`](templates/base.html), the visual styles in [`styles.css`](styles.css), and direct asset selection in [`release-meta.js`](release-meta.js). The generator also maintains the sitemap, 404 page and `/projects/` directory redirect. No third-party Python or Node packages are required.
+The shared page shell for newly generated pages is `templates/base.html`; styles are in `styles.css`. The CI workflow in `.github/workflows/site-validation.yml` checks the generated shared pages, the curated pages' essential content and internal links, and JavaScript syntax. These checks do not replace a real desktop/mobile browser and keyboard review.
 
-## Preview and check
+## Preview
 
 ```sh
 python3 -m http.server 8000
 ```
 
-Open `http://localhost:8000`. Check both a phone and desktop layout after design changes. Before committing, verify generated files:
-
-```sh
-python3 scripts/build.py --check
-```
-
-Store genuine screenshots in `assets/screenshots/` and record their origins. Do not substitute mock application interfaces.
+Open `http://localhost:8000`. Check narrow and desktop layouts after visual changes. Keep genuine screenshots with recorded sources; do not replace real application imagery with mockups.
 
 ## Screenshot source
 
