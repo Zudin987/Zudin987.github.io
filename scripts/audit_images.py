@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Audit real site screenshots, reporting PNG dimensions and broken assets.
+"""Check real website screenshots against their PNG headers and HTML dimensions.
 
-Uses only the existing website's image sources. Network failures are reported as
-unverified rather than incorrectly claiming the remote image is broken.
+The non-strict report mode distinguishes temporary network errors from 404s.
+The CI strict mode requires successful verification of every screenshot.
 """
 import argparse
 from html.parser import HTMLParser
@@ -47,7 +47,7 @@ def dimensions(src):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--require-dimensions', action='store_true', help='Fail if width/height missing or inaccurate')
+    parser.add_argument('--require-dimensions', action='store_true', help='Fail if image cannot be checked or width/height differs')
     args = parser.parse_args()
     failures = []
     reviewed = 0
@@ -63,7 +63,7 @@ def main():
             name = page.parent.name
             if error:
                 print(f'{name}: {error}: {src}')
-                if not error.startswith('UNVERIFIED:'):
+                if args.require_dimensions or not error.startswith('UNVERIFIED:'):
                     failures.append(f'{name}: {error}: {src}')
                 continue
             reviewed += 1
