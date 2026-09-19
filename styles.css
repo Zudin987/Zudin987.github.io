@@ -135,3 +135,85 @@ td { color: var(--muted); }
   .site-footer a { margin-top: 0; }
   th, td { padding-inline: .5rem; }
 }
+
+/* Consistent action sizes: preserve existing labels and download targets. */
+.row-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: .5rem;
+  width: 160px;
+  align-items: stretch;
+}
+.row-actions > :is(.button, .text-action) {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  min-height: 46px;
+  padding: .65rem .8rem;
+  border: 1px solid #4b5562;
+  border-radius: 6px;
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: center;
+  text-decoration: none;
+}
+.row-actions > .text-action {
+  color: #121923;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.row-actions > .text-action:hover {
+  color: #121923;
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+.row-actions > .text-action:active { background: #7ba9ed; }
+.project-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 245px));
+  align-items: stretch;
+  gap: .75rem;
+}
+.project-actions:has(> :nth-child(3)) {
+  grid-template-columns: repeat(3, minmax(0, 245px));
+}
+.project-actions > .button {
+  width: 100%;
+  min-width: 0;
+  min-height: 64px;
+  padding: .7rem .85rem;
+  overflow-wrap: anywhere;
+}
+/* The restored ReadyAlert feature block previously had no matching CSS. */
+.project-highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.project-highlight-grid > article {
+  min-width: 0;
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.project-highlight-grid h2 { font-size: 1rem; font-weight: 650; }
+.project-highlight-grid p { margin-top: .65rem; color: var(--muted); font-size: .9375rem; }
+.project-main > section > p { margin-top: .8rem; color: var(--muted); }
+.project-main strong { color: var(--text); }
+.project-hero-media.readyalert-hero { max-width: 679px; }
+.screenshot-grid .screenshot-wide img { max-width: 720px; }
+@media (max-width: 860px) {
+  .row-actions { width: min(100%, 350px); grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; }
+  .project-actions:has(> :nth-child(3)) { grid-template-columns: minmax(0, 360px); }
+}
+@media (max-width: 640px) {
+  .project-actions, .project-actions:has(> :nth-child(3)) {
+    width: min(100%, 490px);
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .project-actions > .button { flex: none; }
+  .project-highlight-grid { grid-template-columns: minmax(0, 1fr); }
+}
