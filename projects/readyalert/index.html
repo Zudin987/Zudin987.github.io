@@ -3,14 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Queue alerts, combat meters and live encounter tracking, with an optional chat overlay.">
+  <meta name="description" content="A lightweight Windows combat companion for Blue Protocol: Star Resonance, with DPS, party information, encounter history, mechanics and chat tools.">
   <meta name="theme-color" content="#141619">
   <meta property="og:title" content="BPSR ReadyAlert · MrEz / Zudin987">
-  <meta property="og:description" content="Queue alerts, combat meters and live encounter tracking, with an optional chat overlay.">
+  <meta property="og:description" content="A lightweight Windows combat companion for Blue Protocol: Star Resonance, with DPS, party information, encounter history, mechanics and chat tools.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://zudin987.github.io/projects/readyalert/">
   <meta property="og:image" content="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-normal.png">
   <meta property="og:image:alt" content="BPSR ReadyAlert DPS meter in Normal mode">
+  <meta property="og:image:width" content="679">
+  <meta property="og:image:height" content="326">
   <link rel="canonical" href="https://zudin987.github.io/projects/readyalert/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
@@ -19,43 +21,105 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header"><div class="shell header-inner">
-    <a class="brand" href="/" aria-label="MrEz / Zudin987 home">MrEz <span>/ Zudin987</span></a>
-    <nav class="site-nav" aria-label="Main navigation"><a href="/#bpsr-tools">BPSR tools</a><a href="/#other-tools">Other tools</a><a href="https://github.com/Zudin987">GitHub <span aria-hidden="true">↗</span></a></nav>
-  </div></header>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="/" aria-label="MrEz / Zudin987 home">MrEz <span>/ Zudin987</span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/#bpsr-tools">BPSR tools</a>
+        <a href="/#other-tools">Other tools</a>
+        <a href="https://github.com/Zudin987">GitHub <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
   <main id="main" class="shell" tabindex="-1">
     <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/#bpsr-tools">BPSR tools</a><span aria-hidden="true">/</span><span aria-current="page">BPSR ReadyAlert</span></nav>
     <header class="project-header">
-      <p class="eyebrow">Windows · x64</p><h1>BPSR ReadyAlert</h1>
-      <p class="lede">A lightweight Blue Protocol: Star Resonance companion for combat statistics, party status, encounter mechanics and queue alerts.</p>
-      <div class="project-actions"><a href="https://github.com/Zudin987/BPSR-ReadyAlert/releases/latest" class="button">Download latest release</a><a href="https://github.com/Zudin987/BPSR-ReadyAlert#readme" class="button secondary">Read documentation</a></div>
+      <p class="eyebrow">Windows · x64</p>
+      <h1>BPSR ReadyAlert</h1>
+      <p class="lede">More than a DPS meter. Keep combat stats, party information, encounter mechanics, history and chat tools together in one lightweight Windows companion.</p>
+      <div class="project-actions">
+        <a href="https://github.com/Zudin987/BPSR-ReadyAlert/releases/latest" class="button">Download latest release</a>
+        <a href="https://github.com/Zudin987/BPSR-ReadyAlert#readme" class="button secondary">Read documentation</a>
+      </div>
       <div class="resource-links"><a href="https://github.com/Zudin987/BPSR-ReadyAlert">View source on GitHub</a><a href="https://github.com/Zudin987/BPSR-ReadyAlert/issues">Report an issue</a></div>
     </header>
-    <figure class="project-hero-media"><a href="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-normal.png" aria-label="Open full-size ReadyAlert Normal meter screenshot"><img src="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-normal.png" alt="ReadyAlert Normal meter showing player damage, classes and Imagines" width="679" height="326" loading="eager" decoding="async"></a><figcaption>Combat meter — Normal layout</figcaption></figure>
+
+    <figure class="project-hero-media readyalert-hero">
+      <a href="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-normal.png" aria-label="Open full-size ReadyAlert Normal meter screenshot">
+        <img src="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-normal.png" alt="BPSR ReadyAlert DPS meter in Normal mode with player damage, classes and Imagines" width="679" height="326" loading="eager" decoding="async">
+      </a>
+      <figcaption>DPS meter — Normal mode</figcaption>
+    </figure>
+
+    <section class="project-highlight-grid" aria-label="ReadyAlert highlights">
+      <article><h2>Party information</h2><p>See player Food and Serum activity, Imagine tiers and revive availability, including revive-penalty cases.</p></article>
+      <article><h2>Mechanics</h2><p>Track boss Enrage and supported encounter-specific Imagine mechanics such as TINA Basilisk and Kartgriff.</p></article>
+      <article><h2>History</h2><p>Archive encounters locally, open HTML reports in your browser and compare fights in Compare mode.</p></article>
+      <article><h2>Chat</h2><p>Translate supported non-English chat and optionally read Guild and Party chat aloud with TTS.</p></article>
+    </section>
+
     <div class="project-layout"><div class="project-main">
-      <section aria-labelledby="features"><h2 id="features">What it does</h2><ul class="feature-list">
-        <li><strong>Combat:</strong> Damage, DPS, healing, tank and damage-received statistics in Normal, Compact, Raid and Compact Raid layouts.</li>
-        <li><strong>Party:</strong> Food and Serum activity, Imagine tiers, revive availability and penalties.</li>
-        <li><strong>Mechanics:</strong> Boss Enrage timing, target HP and helpers for supported encounters.</li>
-        <li><strong>History:</strong> Save encounters locally, open HTML reports and compare two fights side by side.</li>
-        <li><strong>Optional chat:</strong> Translate supported messages and read Guild or Party chat aloud.</li>
-        <li><strong>Alerts:</strong> Queue and party notifications alongside the combat overlays.</li>
-      </ul></section>
-      <section aria-labelledby="screenshots"><h2 id="screenshots">Screenshots</h2><div class="screenshot-grid">
-        <figure><a href="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-raid.png" aria-label="Open full-size Raid meter screenshot"><img src="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-raid.png" alt="Raid meter showing 20 players in two columns" width="668" height="448" loading="lazy" decoding="async"></a><figcaption>Raid layout</figcaption></figure>
-        <figure><a href="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-compact.png" aria-label="Open full-size Compact meter screenshot"><img src="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-compact.png" alt="Compact meter displaying essential damage statistics" width="402" height="402" loading="lazy" decoding="async"></a><figcaption>Compact layout</figcaption></figure>
-        <figure><a href="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-compact-raid.png" aria-label="Open full-size Compact Raid meter screenshot"><img src="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-compact-raid.png" alt="Compact Raid meter with a two-column player list" width="509" height="282" loading="lazy" decoding="async"></a><figcaption>Compact Raid layout</figcaption></figure>
-        <figure><a href="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/tracker-mechanics.png" aria-label="Open full-size mechanics screenshot"><img src="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/tracker-mechanics.png" alt="Mechanics overlay showing Food and Serum timers and encounter tracking" width="387" height="316" loading="lazy" decoding="async"></a><figcaption>Tracker and mechanics</figcaption></figure>
-        <figure class="screenshot-wide"><a href="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/chat-overlay.png" aria-label="Open full-size chat overlay screenshot"><img src="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/chat-overlay.png" alt="Chat overlay showing channels, messages and text-to-speech controls" width="617" height="532" loading="lazy" decoding="async"></a><figcaption>Chat overlay</figcaption></figure>
-      </div></section>
-      <section id="history" aria-labelledby="history-title"><h2 id="history-title">Encounter History</h2><p>Open saved fights as HTML reports and use Compare mode to review differences between encounters.</p><div class="screenshot-grid">
-        <figure><a href="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/archive-encounter-1.png" aria-label="Open full-size encounter archive screenshot"><img src="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/archive-encounter-1.png" alt="Encounter History archive of saved fights" width="1919" height="918" loading="lazy" decoding="async"></a><figcaption>Saved encounters</figcaption></figure>
-        <figure><a href="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/archive-encounter-2.png" aria-label="Open full-size encounter details screenshot"><img src="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/archive-encounter-2.png" alt="Encounter details and report actions" width="1553" height="912" loading="lazy" decoding="async"></a><figcaption>Encounter details</figcaption></figure>
-      </div></section>
-      <section aria-labelledby="setup"><h2 id="setup">Quick start</h2><ol class="steps"><li>Install Npcap, then download and run BPSR-ReadyAlert.exe from the latest release.</li><li>Open BPSR and enable the overlays and alerts you want in Settings.</li><li>If no combat data appears, choose the network adapter used by BPSR in Settings. Ctrl+Shift+F10 shows or hides the combat and mechanics overlays.</li></ol></section>
+      <section aria-labelledby="why"><h2 id="why">Why ReadyAlert?</h2>
+        <ul class="feature-list">
+          <li><strong>Food &amp; Serum tracking</strong> — See other players' active Food and Serum activity.</li>
+          <li><strong>Revive status</strong> — Know who can and cannot be revived, including revive-penalty cases.</li>
+          <li><strong>Imagine tiers without hovering</strong> — View tier information directly from the combat UI.</li>
+          <li><strong>Built-in Enrage tracker</strong> — See how much time remains before the boss enrages.</li>
+          <li><strong>Boss-specific Imagine mechanics</strong> — Built-in helpers for supported encounters such as TINA Basilisk and Kartgriff.</li>
+          <li><strong>Browser-ready Encounter History</strong> — Open saved fights as HTML and compare encounters side by side.</li>
+          <li><strong>Lightweight</strong> — Built in Rust and packaged as a small Windows companion.</li>
+          <li><strong>Chat tools</strong> — Translate supported chat and optionally use Guild and Party TTS.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="combat"><h2 id="combat">Combat and party tools</h2>
+        <ul class="feature-list">
+          <li>DPS, damage, healing, tank and damage-received statistics.</li>
+          <li>Normal, Compact, Raid and Compact Raid layouts.</li>
+          <li>Party Food, Serum, Imagine tier and revive information.</li>
+          <li>Live target and encounter tracking with boss Enrage timing.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="screenshots"><h2 id="screenshots">Screenshots</h2>
+        <div class="screenshot-grid">
+          <figure><a href="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-raid.png" aria-label="Open full-size ReadyAlert Raid meter screenshot"><img src="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-raid.png" alt="ReadyAlert Raid meter showing 20 players in two columns with damage and revive status" width="668" height="448" loading="lazy" decoding="async"></a><figcaption>Raid — 20-player two-column layout</figcaption></figure>
+          <figure><a href="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-compact.png" aria-label="Open full-size ReadyAlert Compact meter screenshot"><img src="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-compact.png" alt="ReadyAlert Compact meter with a smaller player list and damage values" width="402" height="402" loading="lazy" decoding="async"></a><figcaption>Compact — essentials in less space</figcaption></figure>
+          <figure><a href="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-compact-raid.png" aria-label="Open full-size ReadyAlert Compact Raid meter screenshot"><img src="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/meter-compact-raid.png" alt="ReadyAlert Compact Raid meter showing 20 players in a smaller two-column layout" width="509" height="282" loading="lazy" decoding="async"></a><figcaption>Compact Raid — 20 players with a smaller footprint</figcaption></figure>
+          <figure><a href="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/tracker-mechanics.png" aria-label="Open full-size ReadyAlert Tracker and Mechanics screenshot"><img src="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/tracker-mechanics.png" alt="ReadyAlert Tracker and Mechanics overlay showing key stats, food and serum durations, and mechanic timers" width="387" height="316" loading="lazy" decoding="async"></a><figcaption>Tracker &amp; Mechanics</figcaption></figure>
+          <figure class="screenshot-wide"><a href="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/chat-overlay.png" aria-label="Open full-size ReadyAlert Chat Overlay screenshot"><img src="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/chat-overlay.png" alt="ReadyAlert Chat Overlay with channel tabs, game messages and text-to-speech controls" width="617" height="532" loading="lazy" decoding="async"></a><figcaption>Chat Overlay</figcaption></figure>
+        </div>
+      </section>
+
+      <section id="history" aria-labelledby="history-title"><h2 id="history-title">Encounter History</h2>
+        <p>Keep encounters in a local archive, open them as HTML in your browser and use <strong>Compare</strong> mode to review differences between fights.</p>
+        <div class="screenshot-grid">
+          <figure><a href="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/archive-encounter-1.png" aria-label="Open full-size ReadyAlert Encounter History archive screenshot"><img src="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/archive-encounter-1.png" alt="BPSR ReadyAlert Encounter History archive showing a saved combat encounter" width="1919" height="918" loading="lazy" decoding="async"></a><figcaption>Encounter History — archive overview</figcaption></figure>
+          <figure><a href="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/archive-encounter-2.png" aria-label="Open full-size ReadyAlert Encounter History details screenshot"><img src="https://raw.githubusercontent.com/Zudin987/BPSR-ReadyAlert/main/docs/images/archive-encounter-2.png" alt="BPSR ReadyAlert Encounter History details showing encounter information and report actions" width="1553" height="912" loading="lazy" decoding="async"></a><figcaption>Encounter History — encounter details</figcaption></figure>
+        </div>
+      </section>
+
+      <section aria-labelledby="chat"><h2 id="chat">Chat without losing focus</h2>
+        <p>The Chat Overlay can automatically translate supported non-English messages to English. Guild and Party chat can also be sent to TTS when enabled.</p>
+      </section>
+
+      <section aria-labelledby="lightweight"><h2 id="lightweight">Built for lightweight use</h2>
+        <p>ReadyAlert is built in <strong>Rust</strong> and designed to be a small background companion while you play.</p>
+      </section>
+
+      <section aria-labelledby="setup"><h2 id="setup">Quick start</h2><ol class="steps"><li>Install Npcap, then download BPSR-ReadyAlert.exe from the latest release.</li><li>Run the app and open BPSR. If capture is empty, choose the correct network adapter in Settings.</li><li>Enable the overlays, trackers and chat options you want. Ctrl+Shift+F10 toggles the combat and Mechanics overlays.</li></ol></section>
       <section aria-labelledby="docs"><h2 id="docs">Further reading</h2><ul class="doc-links"><li><a href="https://github.com/Zudin987/BPSR-ReadyAlert/blob/main/docs/DEVELOPMENT.md">Build and development</a></li></ul></section>
-    </div><aside class="project-aside" aria-label="Requirements and limitations"><section><h2>Requirements</h2><ul><li>64-bit Windows</li><li>Npcap, installed separately</li><li>A supported BPSR client</li></ul><a href="https://npcap.com/#download" class="text-action">Get Npcap</a></section><section><h2>Before you use it</h2><p>Reads network traffic through Npcap; it does not inject into the game or automate gameplay.</p><p>Optional translation and speech use online providers. Game updates can affect compatibility.</p></section></aside></div>
+    </div>
+    <aside class="project-aside" aria-label="Requirements and limitations">
+      <section><h2>Requirements</h2><ul><li>64-bit Windows</li><li>Npcap, installed separately</li><li>A supported BPSR client</li></ul><a href="https://npcap.com/#download" class="text-action">Get Npcap</a></section>
+      <section><h2>What it does not do</h2><p>ReadyAlert reads game network traffic through Npcap. It does not inject into the game or automate gameplay.</p><p>Optional translation and speech use online providers. Game updates can affect compatibility.</p></section>
+      <section><h2>Unofficial tool</h2><p>ReadyAlert is an unofficial community project and is not affiliated with BPSR's developers or publishers.</p></section>
+    </aside></div>
   </main>
-  <footer class="site-footer shell"><span>MrEz / Zudin987</span><p>Unofficial BPSR community tool. Not affiliated with the game's developers or publishers.</p><a href="https://github.com/Zudin987/Zudin987.github.io">Website source</a></footer>
+  <footer class="site-footer shell">
+    <span>MrEz / Zudin987</span>
+    <p>Unofficial BPSR community tool. Not affiliated with the game’s developers or publishers.</p>
+    <a href="https://github.com/Zudin987/Zudin987.github.io">Website source</a>
+  </footer>
 </body>
 </html>
