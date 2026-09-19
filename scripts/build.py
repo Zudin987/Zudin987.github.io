@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Generate the committed GitHub Pages HTML using Python's standard library."""
+"""Generate shared site pages while preserving intentionally curated project HTML.
+
+Project detail pages contain galleries and metadata not represented in projects.json.
+They are explicitly authored HTML. Validate them with scripts/validate_site.py; never
+silently replace them with the minimal fallback renderer during a site rebuild.
+"""
 import argparse
 import html
 import json
@@ -71,6 +76,7 @@ def home():
 
 
 def project_page(project):
+    """Scaffold for a new project; existing detail pages are intentionally curated."""
     name, repo = project["name"], repo_url(project)
     category = "BPSR tools" if project["category"] == "bpsr" else "Other tools"
     anchor = "bpsr-tools" if project["category"] == "bpsr" else "other-tools"
@@ -95,7 +101,7 @@ def project_page(project):
         content += '</tbody></table></div></section>'
     if project.get("screenshot"):
         s = project["screenshot"]
-        content += f'<figure><a href="{e(s["src"])}" aria-label="Open full-size BlueMeter screenshot"><img src="{e(s["src"])}" alt="{e(s["alt"])}" width="{s["width"]}" height="{s["height"]}" loading="lazy" decoding="async"></a><figcaption>{e(s["caption"])}</figcaption></figure>'
+        content += f'<figure><a href="{e(s["src"])}" aria-label="Open full-size {e(name)} screenshot"><img src="{e(s["src"])}" alt="{e(s["alt"])}" width="{s["width"]}" height="{s["height"]}" loading="lazy" decoding="async"></a><figcaption>{e(s["caption"])}</figcaption></figure>'
     content += f'<section aria-labelledby="setup"><h2 id="setup">Quick start</h2>{items(project["steps"], "ol", "steps")}</section>'
     if project["docs"]:
         content += '<section aria-labelledby="docs"><h2 id="docs">Further reading</h2><ul class="doc-links">' + ''.join('<li>' + link(repo + '/blob/main/' + doc['path'], doc['label']) + '</li>' for doc in project["docs"]) + '</ul></section>'
@@ -111,7 +117,11 @@ def project_page(project):
 def outputs():
     pages = {"index.html": home()}
     for project in PROJECTS:
-        pages[f'projects/{project["slug"]}/index.html'] = project_page(project)
+        path = f'projects/{project["slug"]}/index.html'
+        existing = ROOT / path
+        # Preserve curated galleries, editorial text and social-preview metadata.
+        # A new project can still be scaffolded with the minimal renderer above.
+        pages[path] = existing.read_text(encoding="utf-8") if existing.exists() else project_page(project)
     pages["404.html"] = page("Page not found · MrEz / Zudin987", "This page could not be found. Browse the project directory to find a tool or its documentation.", "/404.html", '<section class="not-found"><p class="eyebrow">404</p><h1>Page not found.</h1><p>The link may be out of date. Find the tool you need in the project directory.</p>' + link('/#bpsr-tools', 'Browse projects', 'button') + '</section>', extra_head='<meta name="robots" content="noindex">')
     pages["projects/index.html"] = page("Projects · MrEz / Zudin987", "Browse Windows, Android and BPSR tools by MrEz.", "/", '<section class="not-found"><h1>Project directory</h1><p>The full project directory is on the homepage.</p>' + link('/#bpsr-tools', 'Browse all projects', 'button') + '</section>', extra_head='<meta http-equiv="refresh" content="0;url=/#bpsr-tools">')
     sitemap = ElementTree.Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
